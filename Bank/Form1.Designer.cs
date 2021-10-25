@@ -38,25 +38,25 @@
             this.btnInsertTakeCard = new System.Windows.Forms.Button();
             this.cardinside = new System.Windows.Forms.RadioButton();
             this.gbKeyboard = new System.Windows.Forms.GroupBox();
+            this.btnKeyConfirm = new System.Windows.Forms.Button();
+            this.btnKey9 = new System.Windows.Forms.Button();
+            this.btnKey0 = new System.Windows.Forms.Button();
+            this.btnKey8 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnKey7 = new System.Windows.Forms.Button();
+            this.btnKey6 = new System.Windows.Forms.Button();
+            this.btnKey5 = new System.Windows.Forms.Button();
+            this.btnKey4 = new System.Windows.Forms.Button();
             this.btnKey3 = new System.Windows.Forms.Button();
             this.btnKey2 = new System.Windows.Forms.Button();
             this.btnKey1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.gbCardInfo = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbCardExpDate = new System.Windows.Forms.TextBox();
             this.gbCardNumber = new System.Windows.Forms.GroupBox();
-            this.tbCardNumber = new System.Windows.Forms.TextBox();
             this.tabPageBankomat2 = new System.Windows.Forms.TabPage();
-            this.btnKey6 = new System.Windows.Forms.Button();
-            this.btnKey5 = new System.Windows.Forms.Button();
-            this.btnKey4 = new System.Windows.Forms.Button();
-            this.btnKey9 = new System.Windows.Forms.Button();
-            this.btnKey8 = new System.Windows.Forms.Button();
-            this.btnKey7 = new System.Windows.Forms.Button();
-            this.btnKeyConfirm = new System.Windows.Forms.Button();
-            this.btnKey0 = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.tbCardNumber = new System.Windows.Forms.MaskedTextBox();
+            this.tbCardExpDate = new System.Windows.Forms.MaskedTextBox();
             this.tcBanks.SuspendLayout();
             this.tabPageBankomat1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -104,6 +104,7 @@
             // 
             // btnTakeCheck
             // 
+            this.btnTakeCheck.Enabled = false;
             this.btnTakeCheck.Location = new System.Drawing.Point(3, 3);
             this.btnTakeCheck.Name = "btnTakeCheck";
             this.btnTakeCheck.Size = new System.Drawing.Size(194, 32);
@@ -113,6 +114,7 @@
             // 
             // btnTakeCash
             // 
+            this.btnTakeCash.Enabled = false;
             this.btnTakeCash.Location = new System.Drawing.Point(3, 41);
             this.btnTakeCash.Name = "btnTakeCash";
             this.btnTakeCash.Size = new System.Drawing.Size(194, 34);
@@ -169,13 +171,103 @@
             this.gbKeyboard.TabIndex = 4;
             this.gbKeyboard.TabStop = false;
             // 
+            // btnKeyConfirm
+            // 
+            this.btnKeyConfirm.Location = new System.Drawing.Point(134, 186);
+            this.btnKeyConfirm.Name = "btnKeyConfirm";
+            this.btnKeyConfirm.Size = new System.Drawing.Size(58, 49);
+            this.btnKeyConfirm.TabIndex = 5;
+            this.btnKeyConfirm.Text = "✓";
+            this.btnKeyConfirm.UseVisualStyleBackColor = true;
+            this.btnKeyConfirm.Click += new System.EventHandler(this.btnKeyConfirm_Click);
+            // 
+            // btnKey9
+            // 
+            this.btnKey9.Location = new System.Drawing.Point(134, 131);
+            this.btnKey9.Name = "btnKey9";
+            this.btnKey9.Size = new System.Drawing.Size(58, 49);
+            this.btnKey9.TabIndex = 8;
+            this.btnKey9.Text = "9";
+            this.btnKey9.UseVisualStyleBackColor = true;
+            this.btnKey9.Click += new System.EventHandler(this.btnKey9_Click);
+            // 
+            // btnKey0
+            // 
+            this.btnKey0.Location = new System.Drawing.Point(70, 186);
+            this.btnKey0.Name = "btnKey0";
+            this.btnKey0.Size = new System.Drawing.Size(58, 49);
+            this.btnKey0.TabIndex = 4;
+            this.btnKey0.Text = "0";
+            this.btnKey0.UseVisualStyleBackColor = true;
+            this.btnKey0.Click += new System.EventHandler(this.btnKey0_Click);
+            // 
+            // btnKey8
+            // 
+            this.btnKey8.Location = new System.Drawing.Point(70, 131);
+            this.btnKey8.Name = "btnKey8";
+            this.btnKey8.Size = new System.Drawing.Size(58, 49);
+            this.btnKey8.TabIndex = 7;
+            this.btnKey8.Text = "8";
+            this.btnKey8.UseVisualStyleBackColor = true;
+            this.btnKey8.Click += new System.EventHandler(this.btnKey8_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(6, 186);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(58, 49);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "✘";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
+            // 
+            // btnKey7
+            // 
+            this.btnKey7.Location = new System.Drawing.Point(6, 131);
+            this.btnKey7.Name = "btnKey7";
+            this.btnKey7.Size = new System.Drawing.Size(58, 49);
+            this.btnKey7.TabIndex = 6;
+            this.btnKey7.Text = "7";
+            this.btnKey7.UseVisualStyleBackColor = true;
+            this.btnKey7.Click += new System.EventHandler(this.btnKey7_Click);
+            // 
+            // btnKey6
+            // 
+            this.btnKey6.Location = new System.Drawing.Point(134, 76);
+            this.btnKey6.Name = "btnKey6";
+            this.btnKey6.Size = new System.Drawing.Size(58, 49);
+            this.btnKey6.TabIndex = 5;
+            this.btnKey6.Text = "6";
+            this.btnKey6.UseVisualStyleBackColor = true;
+            this.btnKey6.Click += new System.EventHandler(this.btnKey6_Click);
+            // 
+            // btnKey5
+            // 
+            this.btnKey5.Location = new System.Drawing.Point(70, 76);
+            this.btnKey5.Name = "btnKey5";
+            this.btnKey5.Size = new System.Drawing.Size(58, 49);
+            this.btnKey5.TabIndex = 4;
+            this.btnKey5.Text = "5";
+            this.btnKey5.UseVisualStyleBackColor = true;
+            this.btnKey5.Click += new System.EventHandler(this.btnKey5_Click);
+            // 
+            // btnKey4
+            // 
+            this.btnKey4.Location = new System.Drawing.Point(6, 76);
+            this.btnKey4.Name = "btnKey4";
+            this.btnKey4.Size = new System.Drawing.Size(58, 49);
+            this.btnKey4.TabIndex = 3;
+            this.btnKey4.Text = "4";
+            this.btnKey4.UseVisualStyleBackColor = true;
+            this.btnKey4.Click += new System.EventHandler(this.btnKey4_Click);
+            // 
             // btnKey3
             // 
             this.btnKey3.Location = new System.Drawing.Point(134, 21);
             this.btnKey3.Name = "btnKey3";
             this.btnKey3.Size = new System.Drawing.Size(58, 49);
             this.btnKey3.TabIndex = 2;
-            this.btnKey3.Text = "button1";
+            this.btnKey3.Text = "3";
             this.btnKey3.UseVisualStyleBackColor = true;
             this.btnKey3.Click += new System.EventHandler(this.btnKey3_Click);
             // 
@@ -185,7 +277,7 @@
             this.btnKey2.Name = "btnKey2";
             this.btnKey2.Size = new System.Drawing.Size(58, 49);
             this.btnKey2.TabIndex = 1;
-            this.btnKey2.Text = "button1";
+            this.btnKey2.Text = "2";
             this.btnKey2.UseVisualStyleBackColor = true;
             this.btnKey2.Click += new System.EventHandler(this.btnKey2_Click);
             // 
@@ -195,7 +287,7 @@
             this.btnKey1.Name = "btnKey1";
             this.btnKey1.Size = new System.Drawing.Size(58, 49);
             this.btnKey1.TabIndex = 0;
-            this.btnKey1.Text = "button1";
+            this.btnKey1.Text = "1";
             this.btnKey1.UseVisualStyleBackColor = true;
             this.btnKey1.Click += new System.EventHandler(this.btnKey1_Click);
             // 
@@ -227,13 +319,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Срок действия";
             // 
-            // tbCardExpDate
-            // 
-            this.tbCardExpDate.Location = new System.Drawing.Point(6, 28);
-            this.tbCardExpDate.Name = "tbCardExpDate";
-            this.tbCardExpDate.Size = new System.Drawing.Size(119, 25);
-            this.tbCardExpDate.TabIndex = 0;
-            // 
             // gbCardNumber
             // 
             this.gbCardNumber.Controls.Add(this.tbCardNumber);
@@ -243,13 +328,6 @@
             this.gbCardNumber.TabIndex = 0;
             this.gbCardNumber.TabStop = false;
             this.gbCardNumber.Text = "Номер";
-            // 
-            // tbCardNumber
-            // 
-            this.tbCardNumber.Location = new System.Drawing.Point(6, 21);
-            this.tbCardNumber.Name = "tbCardNumber";
-            this.tbCardNumber.Size = new System.Drawing.Size(176, 25);
-            this.tbCardNumber.TabIndex = 0;
             // 
             // tabPageBankomat2
             // 
@@ -261,95 +339,21 @@
             this.tabPageBankomat2.Text = "Банкомат 2";
             this.tabPageBankomat2.UseVisualStyleBackColor = true;
             // 
-            // btnKey6
+            // tbCardNumber
             // 
-            this.btnKey6.Location = new System.Drawing.Point(134, 76);
-            this.btnKey6.Name = "btnKey6";
-            this.btnKey6.Size = new System.Drawing.Size(58, 49);
-            this.btnKey6.TabIndex = 5;
-            this.btnKey6.Text = "button1";
-            this.btnKey6.UseVisualStyleBackColor = true;
-            this.btnKey6.Click += new System.EventHandler(this.btnKey6_Click);
+            this.tbCardNumber.Location = new System.Drawing.Point(6, 21);
+            this.tbCardNumber.Mask = "0000 0000 0000 0000";
+            this.tbCardNumber.Name = "tbCardNumber";
+            this.tbCardNumber.Size = new System.Drawing.Size(139, 25);
+            this.tbCardNumber.TabIndex = 2;
             // 
-            // btnKey5
+            // tbCardExpDate
             // 
-            this.btnKey5.Location = new System.Drawing.Point(70, 76);
-            this.btnKey5.Name = "btnKey5";
-            this.btnKey5.Size = new System.Drawing.Size(58, 49);
-            this.btnKey5.TabIndex = 4;
-            this.btnKey5.Text = "button4";
-            this.btnKey5.UseVisualStyleBackColor = true;
-            this.btnKey5.Click += new System.EventHandler(this.btnKey5_Click);
-            // 
-            // btnKey4
-            // 
-            this.btnKey4.Location = new System.Drawing.Point(6, 76);
-            this.btnKey4.Name = "btnKey4";
-            this.btnKey4.Size = new System.Drawing.Size(58, 49);
-            this.btnKey4.TabIndex = 3;
-            this.btnKey4.Text = "button1";
-            this.btnKey4.UseVisualStyleBackColor = true;
-            this.btnKey4.Click += new System.EventHandler(this.btnKey4_Click);
-            // 
-            // btnKey9
-            // 
-            this.btnKey9.Location = new System.Drawing.Point(134, 131);
-            this.btnKey9.Name = "btnKey9";
-            this.btnKey9.Size = new System.Drawing.Size(58, 49);
-            this.btnKey9.TabIndex = 8;
-            this.btnKey9.Text = "button1";
-            this.btnKey9.UseVisualStyleBackColor = true;
-            this.btnKey9.Click += new System.EventHandler(this.btnKey9_Click);
-            // 
-            // btnKey8
-            // 
-            this.btnKey8.Location = new System.Drawing.Point(70, 131);
-            this.btnKey8.Name = "btnKey8";
-            this.btnKey8.Size = new System.Drawing.Size(58, 49);
-            this.btnKey8.TabIndex = 7;
-            this.btnKey8.Text = "button7";
-            this.btnKey8.UseVisualStyleBackColor = true;
-            this.btnKey8.Click += new System.EventHandler(this.btnKey8_Click);
-            // 
-            // btnKey7
-            // 
-            this.btnKey7.Location = new System.Drawing.Point(6, 131);
-            this.btnKey7.Name = "btnKey7";
-            this.btnKey7.Size = new System.Drawing.Size(58, 49);
-            this.btnKey7.TabIndex = 6;
-            this.btnKey7.Text = "button1";
-            this.btnKey7.UseVisualStyleBackColor = true;
-            this.btnKey7.Click += new System.EventHandler(this.btnKey7_Click);
-            // 
-            // btnKeyConfirm
-            // 
-            this.btnKeyConfirm.Location = new System.Drawing.Point(134, 186);
-            this.btnKeyConfirm.Name = "btnKeyConfirm";
-            this.btnKeyConfirm.Size = new System.Drawing.Size(58, 49);
-            this.btnKeyConfirm.TabIndex = 5;
-            this.btnKeyConfirm.Text = "button1";
-            this.btnKeyConfirm.UseVisualStyleBackColor = true;
-            this.btnKeyConfirm.Click += new System.EventHandler(this.btnKeyConfirm_Click);
-            // 
-            // btnKey0
-            // 
-            this.btnKey0.Location = new System.Drawing.Point(70, 186);
-            this.btnKey0.Name = "btnKey0";
-            this.btnKey0.Size = new System.Drawing.Size(58, 49);
-            this.btnKey0.TabIndex = 4;
-            this.btnKey0.Text = "button10";
-            this.btnKey0.UseVisualStyleBackColor = true;
-            this.btnKey0.Click += new System.EventHandler(this.btnKey0_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(6, 186);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(58, 49);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "button1";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
+            this.tbCardExpDate.Location = new System.Drawing.Point(6, 24);
+            this.tbCardExpDate.Mask = "00\\/00";
+            this.tbCardExpDate.Name = "tbCardExpDate";
+            this.tbCardExpDate.Size = new System.Drawing.Size(47, 25);
+            this.tbCardExpDate.TabIndex = 0;
             // 
             // Form1
             // 
@@ -371,6 +375,8 @@
             this.gbCardNumber.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
 
         private System.Windows.Forms.Button btnKeyConfirm;
 
@@ -402,9 +408,9 @@
 
         private System.Windows.Forms.GroupBox gbKeyboard;
 
-        private System.Windows.Forms.TextBox tbCardNumber;
+        private System.Windows.Forms.MaskedTextBox tbCardNumber;
         private System.Windows.Forms.GroupBox gbCardNumber;
-        private System.Windows.Forms.TextBox tbCardExpDate;
+        private System.Windows.Forms.MaskedTextBox tbCardExpDate;
 
         private System.Windows.Forms.GroupBox gbCardInfo;
         private System.Windows.Forms.TextBox textBox1;
