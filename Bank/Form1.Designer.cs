@@ -53,10 +53,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.gbCardInfo = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gbCardNumber = new System.Windows.Forms.GroupBox();
-            this.tabPageBankomat2 = new System.Windows.Forms.TabPage();
-            this.tbCardNumber = new System.Windows.Forms.MaskedTextBox();
             this.tbCardExpDate = new System.Windows.Forms.MaskedTextBox();
+            this.gbCardNumber = new System.Windows.Forms.GroupBox();
+            this.tbCardNumber = new System.Windows.Forms.MaskedTextBox();
+            this.tabPageBankomat2 = new System.Windows.Forms.TabPage();
             this.tcBanks.SuspendLayout();
             this.tabPageBankomat1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -319,6 +319,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Срок действия";
             // 
+            // tbCardExpDate
+            // 
+            this.tbCardExpDate.Location = new System.Drawing.Point(6, 24);
+            this.tbCardExpDate.Mask = "00\\/00";
+            this.tbCardExpDate.Name = "tbCardExpDate";
+            this.tbCardExpDate.Size = new System.Drawing.Size(47, 25);
+            this.tbCardExpDate.TabIndex = 0;
+            // 
             // gbCardNumber
             // 
             this.gbCardNumber.Controls.Add(this.tbCardNumber);
@@ -329,6 +337,14 @@
             this.gbCardNumber.TabStop = false;
             this.gbCardNumber.Text = "Номер";
             // 
+            // tbCardNumber
+            // 
+            this.tbCardNumber.Location = new System.Drawing.Point(6, 21);
+            this.tbCardNumber.Mask = "0000 0000 0000 0000";
+            this.tbCardNumber.Name = "tbCardNumber";
+            this.tbCardNumber.Size = new System.Drawing.Size(139, 25);
+            this.tbCardNumber.TabIndex = 2;
+            // 
             // tabPageBankomat2
             // 
             this.tabPageBankomat2.Location = new System.Drawing.Point(4, 26);
@@ -338,22 +354,6 @@
             this.tabPageBankomat2.TabIndex = 1;
             this.tabPageBankomat2.Text = "Банкомат 2";
             this.tabPageBankomat2.UseVisualStyleBackColor = true;
-            // 
-            // tbCardNumber
-            // 
-            this.tbCardNumber.Location = new System.Drawing.Point(6, 21);
-            this.tbCardNumber.Mask = "0000 0000 0000 0000";
-            this.tbCardNumber.Name = "tbCardNumber";
-            this.tbCardNumber.Size = new System.Drawing.Size(139, 25);
-            this.tbCardNumber.TabIndex = 2;
-            // 
-            // tbCardExpDate
-            // 
-            this.tbCardExpDate.Location = new System.Drawing.Point(6, 24);
-            this.tbCardExpDate.Mask = "00\\/00";
-            this.tbCardExpDate.Name = "tbCardExpDate";
-            this.tbCardExpDate.Size = new System.Drawing.Size(47, 25);
-            this.tbCardExpDate.TabIndex = 0;
             // 
             // Form1
             // 
