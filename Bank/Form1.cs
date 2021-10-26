@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bank.Controller;
+using Bank.Models;
 
 namespace Bank
 {
     public partial class Form1 : Form
     {
+        public BankController BankController { get; set; }
         public Form1()
         {
             InitializeComponent();
+            
+            BankController = new BankController(this);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -85,6 +90,31 @@ namespace Bank
         private void btnKeyConfirm_Click(object sender, EventArgs e)
         {
             //throw new System.NotImplementedException();
+        }
+
+        private void btnInsertTakeCard_Click(object sender, EventArgs e)
+        {
+            var tbCardNumber = Controls.Find($"tbCardNumber_1", true).First() as MaskedTextBox;
+            var tbCardExpDate = Controls.Find($"tbCardExpDate_1", true).First() as MaskedTextBox;
+            
+            BankController.InsertCard(1 , tbCardNumber.Text, tbCardExpDate.Text);
+        }
+
+        private void tbCardNumber_1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            //throw new System.NotImplementedException();
+        }
+
+        private void tbCardExpDate_1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            //throw new System.NotImplementedException();
+        }
+
+        public void WrongCardMessage()
+        {
+            var textBox = Controls.Find($"textBox1", true).First() as TextBox;
+
+            textBox.Text = "Карты не существует";
         }
     }
 }

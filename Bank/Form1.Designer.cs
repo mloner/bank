@@ -51,17 +51,19 @@
             this.btnKey2 = new System.Windows.Forms.Button();
             this.btnKey1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gbCardInfo = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbCardExpDate = new System.Windows.Forms.MaskedTextBox();
+            this.tbCardExpDate_1 = new System.Windows.Forms.MaskedTextBox();
             this.gbCardNumber = new System.Windows.Forms.GroupBox();
-            this.tbCardNumber = new System.Windows.Forms.MaskedTextBox();
+            this.tbCardNumber_1 = new System.Windows.Forms.MaskedTextBox();
             this.tabPageBankomat2 = new System.Windows.Forms.TabPage();
             this.tcBanks.SuspendLayout();
             this.tabPageBankomat1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.gbCard.SuspendLayout();
             this.gbKeyboard.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.gbCardInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbCardNumber.SuspendLayout();
@@ -141,6 +143,7 @@
             this.btnInsertTakeCard.TabIndex = 1;
             this.btnInsertTakeCard.Text = "Вставить карту";
             this.btnInsertTakeCard.UseVisualStyleBackColor = true;
+            this.btnInsertTakeCard.Click += new System.EventHandler(this.btnInsertTakeCard_Click);
             // 
             // cardinside
             // 
@@ -293,10 +296,18 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.textBox1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(446, 403);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(86, 25);
+            this.textBox1.TabIndex = 0;
             // 
             // gbCardInfo
             // 
@@ -311,7 +322,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tbCardExpDate);
+            this.groupBox1.Controls.Add(this.tbCardExpDate_1);
             this.groupBox1.Location = new System.Drawing.Point(6, 86);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(131, 59);
@@ -319,17 +330,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Срок действия";
             // 
-            // tbCardExpDate
+            // tbCardExpDate_1
             // 
-            this.tbCardExpDate.Location = new System.Drawing.Point(6, 24);
-            this.tbCardExpDate.Mask = "00\\/00";
-            this.tbCardExpDate.Name = "tbCardExpDate";
-            this.tbCardExpDate.Size = new System.Drawing.Size(47, 25);
-            this.tbCardExpDate.TabIndex = 0;
+            this.tbCardExpDate_1.Location = new System.Drawing.Point(6, 24);
+            this.tbCardExpDate_1.Mask = "00\\/00";
+            this.tbCardExpDate_1.Name = "tbCardExpDate_1";
+            this.tbCardExpDate_1.Size = new System.Drawing.Size(47, 25);
+            this.tbCardExpDate_1.TabIndex = 0;
+            this.tbCardExpDate_1.Text = "1223";
+            this.tbCardExpDate_1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tbCardExpDate_1_MaskInputRejected);
             // 
             // gbCardNumber
             // 
-            this.gbCardNumber.Controls.Add(this.tbCardNumber);
+            this.gbCardNumber.Controls.Add(this.tbCardNumber_1);
             this.gbCardNumber.Location = new System.Drawing.Point(6, 25);
             this.gbCardNumber.Name = "gbCardNumber";
             this.gbCardNumber.Size = new System.Drawing.Size(188, 56);
@@ -337,13 +350,15 @@
             this.gbCardNumber.TabStop = false;
             this.gbCardNumber.Text = "Номер";
             // 
-            // tbCardNumber
+            // tbCardNumber_1
             // 
-            this.tbCardNumber.Location = new System.Drawing.Point(6, 21);
-            this.tbCardNumber.Mask = "0000 0000 0000 0000";
-            this.tbCardNumber.Name = "tbCardNumber";
-            this.tbCardNumber.Size = new System.Drawing.Size(139, 25);
-            this.tbCardNumber.TabIndex = 2;
+            this.tbCardNumber_1.Location = new System.Drawing.Point(6, 21);
+            this.tbCardNumber_1.Mask = "0000 0000 0000 0000";
+            this.tbCardNumber_1.Name = "tbCardNumber_1";
+            this.tbCardNumber_1.Size = new System.Drawing.Size(139, 25);
+            this.tbCardNumber_1.TabIndex = 2;
+            this.tbCardNumber_1.Text = "2222222222323323";
+            this.tbCardNumber_1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tbCardNumber_1_MaskInputRejected);
             // 
             // tabPageBankomat2
             // 
@@ -368,6 +383,8 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.gbCard.ResumeLayout(false);
             this.gbKeyboard.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.gbCardInfo.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -375,6 +392,10 @@
             this.gbCardNumber.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.MaskedTextBox tbCardExpDate_1;
+
+        private System.Windows.Forms.MaskedTextBox tbCardNumber_1;
 
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
 
