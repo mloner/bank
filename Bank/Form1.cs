@@ -20,6 +20,7 @@ namespace Bank
             InitializeComponent();
             
             BankController = new BankController(this);
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -91,13 +92,21 @@ namespace Bank
         {
             //throw new System.NotImplementedException();
         }
-
+        // сделать нормальную нумерацию банкоматов блять
         private void btnInsertTakeCard_Click(object sender, EventArgs e)
         {
-            var tbCardNumber = Controls.Find($"tbCardNumber_1", true).First() as MaskedTextBox;
-            var tbCardExpDate = Controls.Find($"tbCardExpDate_1", true).First() as MaskedTextBox;
+            if (BankController.Bank.Bankomats[1].CurrentCard == null)
+            {
+                var tbCardNumber = Controls.Find($"tbCardNumber_1", true).First() as MaskedTextBox;
+                var tbCardExpDate = Controls.Find($"tbCardExpDate_1", true).First() as MaskedTextBox;
             
-            BankController.InsertCard(1 , tbCardNumber.Text, tbCardExpDate.Text);
+                BankController.InsertCard(1 , tbCardNumber.Text, tbCardExpDate.Text);
+            }
+            else
+            {
+                BankController.PullCard(1);
+            }
+            
         }
 
         private void tbCardNumber_1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -133,7 +142,7 @@ namespace Bank
             }
             
         }
-        
+        // сделать нормальную нумерацию банкоматов тоже
         public void CardInserted()
         {
             var rb = Controls.Find($"cardinside_1", true).First() as RadioButton;
@@ -145,6 +154,18 @@ namespace Bank
             cardButton.Text = "Извлечь карту";
             textBox.Text = "Добро пожаловать в банк";
             rb.Checked = true;
+        }
+
+        public void CardPulled()
+        {
+            var rb = Controls.Find($"cardinside_1", true).First() as RadioButton;
+            var textBox = Controls.Find($"textBox1", true).First() as TextBox;
+
+            var cardButton = Controls.Find($"btnInsertTakeCard_1", true).First() as Button;
+
+            cardButton.Text = "Вставить карту";
+            textBox.Text = "Спасибо за использование банкомата";
+            rb.Checked = false;
         }
     }
 }

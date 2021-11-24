@@ -94,7 +94,7 @@ namespace Bank.Controller
         
         public void InsertCard(int bankomatNum, string cardNum, string cardExpDate)
         {
-            var currentBank = Bank.Bankomats[bankomatNum];
+            var currentBankomat = Bank.Bankomats[bankomatNum];
             //var insertedCard = currentBank.InsertCard(cardNum, cardExpDate);
             var correct = false;
             
@@ -112,7 +112,7 @@ namespace Bank.Controller
                 {
                     if (CheckExp(card))
                     {
-                        currentBank.CurrentCard = card; 
+                        currentBankomat.CurrentCard = card; 
                         Form.CardInserted();
                     }
                     else
@@ -125,6 +125,13 @@ namespace Bank.Controller
                     Form.ErrorMessage(Form1.ErrorType.Blocked);
                 }
             }
+        }
+
+        public void PullCard(int bankomatNum)
+        {
+            var currentBankomat = Bank.Bankomats[bankomatNum];
+            currentBankomat.CurrentCard = null;
+            Form.CardPulled();
         }
     }
 }
