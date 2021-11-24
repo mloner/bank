@@ -16,7 +16,7 @@ namespace Bank.Models
 
         public void GetAllCards()
         {
-            Cards = Clients.SelectMany(x => x.Accounts.Select(y => y.Card)).ToList();
+            Cards = Clients.Select(x => x.Card).ToList();
         }
         
     }

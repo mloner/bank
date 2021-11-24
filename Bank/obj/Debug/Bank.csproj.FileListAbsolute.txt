@@ -8,3 +8,13 @@ C:\vuz\7sem\trr\Lab2\Bank\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
 C:\vuz\7sem\trr\Lab2\Bank\Bank\obj\Debug\Bank.exe
 C:\vuz\7sem\trr\Lab2\Bank\Bank\obj\Debug\Bank.pdb
 C:\vuz\7sem\trr\Lab2\Bank\Bank\obj\Debug\Bank.Form1.resources
+C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\obj\Debug\Bank.csprojAssemblyReference.cache
+C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\obj\Debug\Bank.Form1.resources
+C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\obj\Debug\Bank.Properties.Resources.resources
+C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\obj\Debug\Bank.csproj.GenerateResource.cache
+C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
+C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\obj\Debug\Bank.exe
+C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\obj\Debug\Bank.pdb
+C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\bin\Debug\Bank.exe.config
+C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\bin\Debug\Bank.exe
+C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\bin\Debug\Bank.pdb

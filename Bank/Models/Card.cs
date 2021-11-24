@@ -7,5 +7,7 @@ namespace Bank.Models
         public string Number { get; set; }
         public DateTime ExpDatetime { get; set; }
         public bool Blocked { get; set; }
+        
+        public string Pin { get; set; }
     }
 }

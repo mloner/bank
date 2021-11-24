@@ -8,7 +8,10 @@ namespace Bank.Models
         public CardReader CardReader { get; set; }
         public CashDispenser CashDispenser { get; set; }
         public CheckPrinter CheckPrinter { get; set; }
+        
         public Card CurrentCard { get; set; }
+        
+        
 
         public Bankomat()
         {
@@ -17,14 +20,16 @@ namespace Bank.Models
             CheckPrinter = new CheckPrinter();
         }
 
-        public void InsertCard(string cardNumber, string expDate)
+        // говно переделывай
+        public Card InsertCard(string cardNumber, string expDate)
         {
             var expDateParts = expDate.Split('/').ToList();
-            CurrentCard = new Card()
+            Card card = new Card()
             {
                 Number = cardNumber,
                 ExpDatetime = new DateTime(int.Parse("20" + expDateParts[1]), int.Parse(expDateParts[0]), 1)
             };
+            return card;
         }
     }
 }

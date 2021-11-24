@@ -7,6 +7,7 @@ namespace Bank.Models
         public int Id { get; set; }
         public string Fio { get; set; }
         
+        public Card Card { get; set; }
         public List<Account> Accounts { get; set; }
     }
 }

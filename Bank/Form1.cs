@@ -110,11 +110,41 @@ namespace Bank
             //throw new System.NotImplementedException();
         }
 
-        public void WrongCardMessage()
+        public enum ErrorType
+        {
+            WrongNumber,
+            Expire,
+            Blocked
+        }
+        public void ErrorMessage(ErrorType type)
         {
             var textBox = Controls.Find($"textBox1", true).First() as TextBox;
+            switch (type)
+            {
+                case ErrorType.WrongNumber:
+                    textBox.Text = "Карты не существует";
+                    break;
+                case ErrorType.Expire:
+                    textBox.Text = "Срок действия карты истек";
+                    break;
+                case ErrorType.Blocked:
+                    textBox.Text = "Эта карта заблокирована и не может быть возвращена";
+                    break;
+            }
+            
+        }
+        
+        public void CardInserted()
+        {
+            var rb = Controls.Find($"cardinside_1", true).First() as RadioButton;
 
-            textBox.Text = "Карты не существует";
+            var textBox = Controls.Find($"textBox1", true).First() as TextBox;
+            
+            var cardButton = Controls.Find($"btnInsertTakeCard_1", true).First() as Button;
+
+            cardButton.Text = "Извлечь карту";
+            textBox.Text = "Добро пожаловать в банк";
+            rb.Checked = true;
         }
     }
 }
