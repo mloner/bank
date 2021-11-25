@@ -29,26 +29,37 @@ namespace Bank
             //throw new System.NotImplementedException();
         }
         
-        private void btnKeyConfirm_Click_1(object sender, EventArgs e)
+        private void btnKeyConfirm_0_Click(object sender, EventArgs e)
         {
             var bankomatNum = 0;
+            btnKeyConfirm(bankomatNum);
+        }
+        
+        private void btnKeyConfirm(int bankomatNum)
+        {
             if (BankController.IsBankomatInState(bankomatNum, BankomatState.Pincode))
             {
                 BankController.CheckPassword(bankomatNum,
-                    (Controls.Find($"tbPass_1", true).First() as TextBox).Text);
+                    (Controls.Find($"tbPass_{bankomatNum}", true).First() as TextBox).Text);
 
             }
         }
         
         // сделать нормальную нумерацию банкоматов блять
-        private void btnInsertTakeCard_Click(object sender, EventArgs e)
+        private void btnInsertTakeCard_0_Click(object sender, EventArgs e)
         {
-            if (BankController.Bank.Bankomats[0].CurrentCard == null)
+            var bankomatNum = 0;
+            btnInsertTakeCard(bankomatNum);
+        }
+        
+        private void btnInsertTakeCard(int bankomatNum)
+        {
+            if (BankController.Bank.Bankomats[bankomatNum].CurrentCard == null)
             {
-                var tbCardNumber = Controls.Find($"tbCardNumber_1", true).First() as MaskedTextBox;
-                var tbCardExpDate = Controls.Find($"tbCardExpDate_1", true).First() as MaskedTextBox;
+                var tbCardNumber = Controls.Find($"tbCardNumber_{bankomatNum}", true).First() as MaskedTextBox;
+                var tbCardExpDate = Controls.Find($"tbCardExpDate_{bankomatNum}", true).First() as MaskedTextBox;
             
-                BankController.InsertCard(0, tbCardNumber.Text, tbCardExpDate.Text);
+                BankController.InsertCard(bankomatNum, tbCardNumber.Text, tbCardExpDate.Text);
             }
             else
             {
@@ -77,7 +88,7 @@ namespace Bank
         
         public void ErrorMessage(ErrorType type)
         {
-            var textBox = Controls.Find($"textBox1", true).First() as TextBox;
+            var textBox = Controls.Find($"tbMessage_0", true).First() as TextBox;
             switch (type)
             {
                 case ErrorType.WrongNumber:
@@ -98,45 +109,41 @@ namespace Bank
         }
         
         // сделать нормальную нумерацию банкоматов тоже
-        public void CardInserted()
+        public void CardInserted(int bankomatNum)
         {
-            var rb = Controls.Find($"cardinside_1", true).First() as RadioButton;
-
-            var textBox = Controls.Find($"textBox1", true).First() as TextBox;
+            var rb = Controls.Find($"rbCardInside_{bankomatNum}", true).First() as RadioButton;
+            rb.Checked = true;
             
-            var cardButton = Controls.Find($"btnInsertTakeCard_1", true).First() as Button;
-
+            var textBox = Controls.Find($"tbMessage_{bankomatNum}", true).First() as TextBox;
+            textBox.Text = "Добро пожаловать в банк. Введите пароль";
+            
+            var cardButton = Controls.Find($"btnInsertTakeCard_{bankomatNum}", true).First() as Button;
             cardButton.Text = "Извлечь карту";
             cardButton.Enabled = false;
-            textBox.Text = "Добро пожаловать в банк. Введите пароль";
-            rb.Checked = true;
         }
         
-        public void WaitComand()
+        public void WaitComand(int bankomatNum)
         {
-            var cardButton = Controls.Find($"btnInsertTakeCard_1", true).First() as Button;
+            var cardButton = Controls.Find($"btnInsertTakeCard_{bankomatNum}", true).First() as Button;
             cardButton.Enabled = true;
 
-            var tbPass = Controls.Find($"tbPass_1", true).First() as TextBox;
+            var tbPass = Controls.Find($"tbPass_{bankomatNum}", true).First() as TextBox;
             tbPass.Clear();
             
-            var textBox = Controls.Find($"textBox1", true).First() as TextBox;
+            var textBox = Controls.Find($"tbMessage_{bankomatNum}", true).First() as TextBox;
             textBox.Text = "Выберите действие";
         }
 
-        public void CardPulled()
+        public void CardPulled(int bankomatNum)
         {
-            var rb = Controls.Find($"cardinside_1", true).First() as RadioButton;
-            var textBox = Controls.Find($"textBox1", true).First() as TextBox;
-
-            var cardButton = Controls.Find($"btnInsertTakeCard_1", true).First() as Button;
-
-            cardButton.Text = "Вставить карту";
-            textBox.Text = "Спасибо за использование банкомата";
+            var rb = Controls.Find($"rbCardinside_{bankomatNum}", true).First() as RadioButton;
             rb.Checked = false;
+            
+            var textBox = Controls.Find($"tbMessage_{bankomatNum}", true).First() as TextBox;
+            textBox.Text = "Спасибо за использование банкомата";
+            
+            var cardButton = Controls.Find($"btnInsertTakeCard_{bankomatNum}", true).First() as Button;
+            cardButton.Text = "Вставить карту";
         }
-
-       // public void 
-        
     }
 }

@@ -85,7 +85,7 @@ namespace Bank.Controller
             Bank.GetAllCards();
         }
 
-        private bool CheckCardDateExp(Card card)
+        private bool IsCardValidDateExp(Card card)
         {
             DateTime now = DateTime.Now;
             if (now.CompareTo(card.ExpDatetime) < 0)
@@ -113,10 +113,10 @@ namespace Bank.Controller
             {
                 if (!card.Blocked)
                 {
-                    if (CheckCardDateExp(card))
+                    if (IsCardValidDateExp(card))
                     {
                         currentBankomat.CurrentCard = card;
-                        Form.CardInserted();
+                        Form.CardInserted(currentBankomat.Id);
                         currentBankomat.State = BankomatState.Pincode; //waiting for pincode
                     }
                     else
@@ -137,7 +137,7 @@ namespace Bank.Controller
             if (bankomat.CurrentCard.Pin == pass)
             {
                 bankomat.State = BankomatState.WaitCommand;
-                Form.WaitComand();
+                Form.WaitComand(bankomat.Id);
             }
             else
             {
@@ -150,7 +150,7 @@ namespace Bank.Controller
         {
             var currentBankomat = Bank.Bankomats[bankomatNum];
             currentBankomat.CurrentCard = null;
-            Form.CardPulled();
+            Form.CardPulled(currentBankomat.Id);
         }
         
         public bool IsBankomatInState(int bankomanNum, BankomatState state)

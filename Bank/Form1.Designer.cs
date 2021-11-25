@@ -31,33 +31,33 @@
         {
             this.tcBanks = new System.Windows.Forms.TabControl();
             this.tabPageBankomat1 = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnTakeCheck = new System.Windows.Forms.Button();
-            this.btnTakeCash = new System.Windows.Forms.Button();
-            this.gbCard = new System.Windows.Forms.GroupBox();
-            this.btnInsertTakeCard_1 = new System.Windows.Forms.Button();
-            this.cardinside_1 = new System.Windows.Forms.RadioButton();
-            this.gbKeyboard = new System.Windows.Forms.GroupBox();
-            this.tbPass_1 = new System.Windows.Forms.TextBox();
-            this.btnKeyConfirm = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.gbCardInfo = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbCardExpDate_1 = new System.Windows.Forms.MaskedTextBox();
-            this.gbCardNumber = new System.Windows.Forms.GroupBox();
-            this.tbCardNumber_1 = new System.Windows.Forms.MaskedTextBox();
+            this.flowLayoutPanel2_0 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnTakeCheck_0 = new System.Windows.Forms.Button();
+            this.btnTakeCash_0 = new System.Windows.Forms.Button();
+            this.gbCard_0 = new System.Windows.Forms.GroupBox();
+            this.btnInsertTakeCard_0 = new System.Windows.Forms.Button();
+            this.rbCardInside_0 = new System.Windows.Forms.RadioButton();
+            this.gbKeyboard_0 = new System.Windows.Forms.GroupBox();
+            this.tbPass_0 = new System.Windows.Forms.TextBox();
+            this.btnConfirm_0 = new System.Windows.Forms.Button();
+            this.btnCancel_0 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1_0 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tbMessage_0 = new System.Windows.Forms.TextBox();
+            this.gbCardInfo_0 = new System.Windows.Forms.GroupBox();
+            this.groupBox1_0 = new System.Windows.Forms.GroupBox();
+            this.tbCardExpDate_0 = new System.Windows.Forms.MaskedTextBox();
+            this.gbCardNumber_0 = new System.Windows.Forms.GroupBox();
+            this.tbCardNumber_0 = new System.Windows.Forms.MaskedTextBox();
             this.tabPageBankomat2 = new System.Windows.Forms.TabPage();
             this.tcBanks.SuspendLayout();
             this.tabPageBankomat1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.gbCard.SuspendLayout();
-            this.gbKeyboard.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.gbCardInfo.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.gbCardNumber.SuspendLayout();
+            this.flowLayoutPanel2_0.SuspendLayout();
+            this.gbCard_0.SuspendLayout();
+            this.gbKeyboard_0.SuspendLayout();
+            this.flowLayoutPanel1_0.SuspendLayout();
+            this.gbCardInfo_0.SuspendLayout();
+            this.groupBox1_0.SuspendLayout();
+            this.gbCardNumber_0.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcBanks
@@ -73,9 +73,9 @@
             // 
             // tabPageBankomat1
             // 
-            this.tabPageBankomat1.Controls.Add(this.flowLayoutPanel2);
-            this.tabPageBankomat1.Controls.Add(this.flowLayoutPanel1);
-            this.tabPageBankomat1.Controls.Add(this.gbCardInfo);
+            this.tabPageBankomat1.Controls.Add(this.flowLayoutPanel2_0);
+            this.tabPageBankomat1.Controls.Add(this.flowLayoutPanel1_0);
+            this.tabPageBankomat1.Controls.Add(this.gbCardInfo_0);
             this.tabPageBankomat1.Location = new System.Drawing.Point(4, 26);
             this.tabPageBankomat1.Name = "tabPageBankomat1";
             this.tabPageBankomat1.Padding = new System.Windows.Forms.Padding(3);
@@ -84,172 +84,172 @@
             this.tabPageBankomat1.Text = "Банкомат 1";
             this.tabPageBankomat1.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel2
+            // flowLayoutPanel2_0
             // 
-            this.flowLayoutPanel2.Controls.Add(this.btnTakeCheck);
-            this.flowLayoutPanel2.Controls.Add(this.btnTakeCash);
-            this.flowLayoutPanel2.Controls.Add(this.gbCard);
-            this.flowLayoutPanel2.Controls.Add(this.gbKeyboard);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(460, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 403);
-            this.flowLayoutPanel2.TabIndex = 1;
+            this.flowLayoutPanel2_0.Controls.Add(this.btnTakeCheck_0);
+            this.flowLayoutPanel2_0.Controls.Add(this.btnTakeCash_0);
+            this.flowLayoutPanel2_0.Controls.Add(this.gbCard_0);
+            this.flowLayoutPanel2_0.Controls.Add(this.gbKeyboard_0);
+            this.flowLayoutPanel2_0.Location = new System.Drawing.Point(460, 3);
+            this.flowLayoutPanel2_0.Name = "flowLayoutPanel2_0";
+            this.flowLayoutPanel2_0.Size = new System.Drawing.Size(200, 403);
+            this.flowLayoutPanel2_0.TabIndex = 1;
             // 
-            // btnTakeCheck
+            // btnTakeCheck_0
             // 
-            this.btnTakeCheck.Enabled = false;
-            this.btnTakeCheck.Location = new System.Drawing.Point(3, 3);
-            this.btnTakeCheck.Name = "btnTakeCheck";
-            this.btnTakeCheck.Size = new System.Drawing.Size(194, 32);
-            this.btnTakeCheck.TabIndex = 0;
-            this.btnTakeCheck.Text = "Взять чек";
-            this.btnTakeCheck.UseVisualStyleBackColor = true;
+            this.btnTakeCheck_0.Enabled = false;
+            this.btnTakeCheck_0.Location = new System.Drawing.Point(3, 3);
+            this.btnTakeCheck_0.Name = "btnTakeCheck_0";
+            this.btnTakeCheck_0.Size = new System.Drawing.Size(194, 32);
+            this.btnTakeCheck_0.TabIndex = 0;
+            this.btnTakeCheck_0.Text = "Взять чек";
+            this.btnTakeCheck_0.UseVisualStyleBackColor = true;
             // 
-            // btnTakeCash
+            // btnTakeCash_0
             // 
-            this.btnTakeCash.Enabled = false;
-            this.btnTakeCash.Location = new System.Drawing.Point(3, 41);
-            this.btnTakeCash.Name = "btnTakeCash";
-            this.btnTakeCash.Size = new System.Drawing.Size(194, 34);
-            this.btnTakeCash.TabIndex = 3;
-            this.btnTakeCash.Text = "Взять деньги";
-            this.btnTakeCash.UseVisualStyleBackColor = true;
+            this.btnTakeCash_0.Enabled = false;
+            this.btnTakeCash_0.Location = new System.Drawing.Point(3, 41);
+            this.btnTakeCash_0.Name = "btnTakeCash_0";
+            this.btnTakeCash_0.Size = new System.Drawing.Size(194, 34);
+            this.btnTakeCash_0.TabIndex = 3;
+            this.btnTakeCash_0.Text = "Взять деньги";
+            this.btnTakeCash_0.UseVisualStyleBackColor = true;
             // 
-            // gbCard
+            // gbCard_0
             // 
-            this.gbCard.Controls.Add(this.btnInsertTakeCard_1);
-            this.gbCard.Controls.Add(this.cardinside_1);
-            this.gbCard.Location = new System.Drawing.Point(3, 81);
-            this.gbCard.Name = "gbCard";
-            this.gbCard.Size = new System.Drawing.Size(194, 62);
-            this.gbCard.TabIndex = 2;
-            this.gbCard.TabStop = false;
-            this.gbCard.Text = "Карта";
+            this.gbCard_0.Controls.Add(this.btnInsertTakeCard_0);
+            this.gbCard_0.Controls.Add(this.rbCardInside_0);
+            this.gbCard_0.Location = new System.Drawing.Point(3, 81);
+            this.gbCard_0.Name = "gbCard_0";
+            this.gbCard_0.Size = new System.Drawing.Size(194, 62);
+            this.gbCard_0.TabIndex = 2;
+            this.gbCard_0.TabStop = false;
+            this.gbCard_0.Text = "Карта";
             // 
-            // btnInsertTakeCard_1
+            // btnInsertTakeCard_0
             // 
-            this.btnInsertTakeCard_1.Location = new System.Drawing.Point(6, 21);
-            this.btnInsertTakeCard_1.Name = "btnInsertTakeCard_1";
-            this.btnInsertTakeCard_1.Size = new System.Drawing.Size(159, 35);
-            this.btnInsertTakeCard_1.TabIndex = 1;
-            this.btnInsertTakeCard_1.Text = "Вставить карту";
-            this.btnInsertTakeCard_1.UseVisualStyleBackColor = true;
-            this.btnInsertTakeCard_1.Click += new System.EventHandler(this.btnInsertTakeCard_Click);
+            this.btnInsertTakeCard_0.Location = new System.Drawing.Point(6, 21);
+            this.btnInsertTakeCard_0.Name = "btnInsertTakeCard_0";
+            this.btnInsertTakeCard_0.Size = new System.Drawing.Size(159, 35);
+            this.btnInsertTakeCard_0.TabIndex = 1;
+            this.btnInsertTakeCard_0.Text = "Вставить карту";
+            this.btnInsertTakeCard_0.UseVisualStyleBackColor = true;
+            this.btnInsertTakeCard_0.Click += new System.EventHandler(this.btnInsertTakeCard_0_Click);
             // 
-            // cardinside_1
+            // rbCardInside_0
             // 
-            this.cardinside_1.Location = new System.Drawing.Point(171, 30);
-            this.cardinside_1.Name = "cardinside_1";
-            this.cardinside_1.Size = new System.Drawing.Size(17, 17);
-            this.cardinside_1.TabIndex = 0;
-            this.cardinside_1.TabStop = true;
-            this.cardinside_1.UseVisualStyleBackColor = true;
+            this.rbCardInside_0.Location = new System.Drawing.Point(171, 30);
+            this.rbCardInside_0.Name = "rbCardInside_0";
+            this.rbCardInside_0.Size = new System.Drawing.Size(17, 17);
+            this.rbCardInside_0.TabIndex = 0;
+            this.rbCardInside_0.TabStop = true;
+            this.rbCardInside_0.UseVisualStyleBackColor = true;
             // 
-            // gbKeyboard
+            // gbKeyboard_0
             // 
-            this.gbKeyboard.Controls.Add(this.tbPass_1);
-            this.gbKeyboard.Controls.Add(this.btnKeyConfirm);
-            this.gbKeyboard.Controls.Add(this.btnCancel);
-            this.gbKeyboard.Location = new System.Drawing.Point(3, 149);
-            this.gbKeyboard.Name = "gbKeyboard";
-            this.gbKeyboard.Size = new System.Drawing.Size(194, 254);
-            this.gbKeyboard.TabIndex = 4;
-            this.gbKeyboard.TabStop = false;
+            this.gbKeyboard_0.Controls.Add(this.tbPass_0);
+            this.gbKeyboard_0.Controls.Add(this.btnConfirm_0);
+            this.gbKeyboard_0.Controls.Add(this.btnCancel_0);
+            this.gbKeyboard_0.Location = new System.Drawing.Point(3, 149);
+            this.gbKeyboard_0.Name = "gbKeyboard_0";
+            this.gbKeyboard_0.Size = new System.Drawing.Size(194, 254);
+            this.gbKeyboard_0.TabIndex = 4;
+            this.gbKeyboard_0.TabStop = false;
             // 
-            // tbPass_1
+            // tbPass_0
             // 
-            this.tbPass_1.AllowDrop = true;
-            this.tbPass_1.Location = new System.Drawing.Point(6, 18);
-            this.tbPass_1.Name = "tbPass_1";
-            this.tbPass_1.PasswordChar = '*';
-            this.tbPass_1.Size = new System.Drawing.Size(167, 25);
-            this.tbPass_1.TabIndex = 6;
+            this.tbPass_0.AllowDrop = true;
+            this.tbPass_0.Location = new System.Drawing.Point(6, 18);
+            this.tbPass_0.Name = "tbPass_0";
+            this.tbPass_0.PasswordChar = '*';
+            this.tbPass_0.Size = new System.Drawing.Size(167, 25);
+            this.tbPass_0.TabIndex = 6;
             // 
-            // btnKeyConfirm
+            // btnConfirm_0
             // 
-            this.btnKeyConfirm.Location = new System.Drawing.Point(134, 186);
-            this.btnKeyConfirm.Name = "btnKeyConfirm";
-            this.btnKeyConfirm.Size = new System.Drawing.Size(58, 49);
-            this.btnKeyConfirm.TabIndex = 5;
-            this.btnKeyConfirm.Text = "✓";
-            this.btnKeyConfirm.UseVisualStyleBackColor = true;
-            this.btnKeyConfirm.Click += new System.EventHandler(this.btnKeyConfirm_Click_1);
+            this.btnConfirm_0.Location = new System.Drawing.Point(134, 186);
+            this.btnConfirm_0.Name = "btnConfirm_0";
+            this.btnConfirm_0.Size = new System.Drawing.Size(58, 49);
+            this.btnConfirm_0.TabIndex = 5;
+            this.btnConfirm_0.Text = "✓";
+            this.btnConfirm_0.UseVisualStyleBackColor = true;
+            this.btnConfirm_0.Click += new System.EventHandler(this.btnKeyConfirm_0_Click);
             // 
-            // btnCancel
+            // btnCancel_0
             // 
-            this.btnCancel.Location = new System.Drawing.Point(6, 186);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(58, 49);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "✘";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
+            this.btnCancel_0.Location = new System.Drawing.Point(6, 186);
+            this.btnCancel_0.Name = "btnCancel_0";
+            this.btnCancel_0.Size = new System.Drawing.Size(58, 49);
+            this.btnCancel_0.TabIndex = 3;
+            this.btnCancel_0.Text = "✘";
+            this.btnCancel_0.UseVisualStyleBackColor = true;
+            this.btnCancel_0.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanel1_0
             // 
-            this.flowLayoutPanel1.Controls.Add(this.textBox1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(446, 403);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1_0.Controls.Add(this.tbMessage_0);
+            this.flowLayoutPanel1_0.Location = new System.Drawing.Point(8, 3);
+            this.flowLayoutPanel1_0.Name = "flowLayoutPanel1_0";
+            this.flowLayoutPanel1_0.Size = new System.Drawing.Size(446, 403);
+            this.flowLayoutPanel1_0.TabIndex = 0;
             // 
-            // textBox1
+            // tbMessage_0
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 25);
-            this.textBox1.TabIndex = 0;
+            this.tbMessage_0.Location = new System.Drawing.Point(3, 3);
+            this.tbMessage_0.Name = "tbMessage_0";
+            this.tbMessage_0.Size = new System.Drawing.Size(300, 25);
+            this.tbMessage_0.TabIndex = 0;
             // 
-            // gbCardInfo
+            // gbCardInfo_0
             // 
-            this.gbCardInfo.Controls.Add(this.groupBox1);
-            this.gbCardInfo.Controls.Add(this.gbCardNumber);
-            this.gbCardInfo.Location = new System.Drawing.Point(663, 60);
-            this.gbCardInfo.Name = "gbCardInfo";
-            this.gbCardInfo.Size = new System.Drawing.Size(200, 151);
-            this.gbCardInfo.TabIndex = 0;
-            this.gbCardInfo.TabStop = false;
-            this.gbCardInfo.Text = "Карта";
+            this.gbCardInfo_0.Controls.Add(this.groupBox1_0);
+            this.gbCardInfo_0.Controls.Add(this.gbCardNumber_0);
+            this.gbCardInfo_0.Location = new System.Drawing.Point(663, 60);
+            this.gbCardInfo_0.Name = "gbCardInfo_0";
+            this.gbCardInfo_0.Size = new System.Drawing.Size(200, 151);
+            this.gbCardInfo_0.TabIndex = 0;
+            this.gbCardInfo_0.TabStop = false;
+            this.gbCardInfo_0.Text = "Карта";
             // 
-            // groupBox1
+            // groupBox1_0
             // 
-            this.groupBox1.Controls.Add(this.tbCardExpDate_1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 86);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(131, 60);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Срок действия";
+            this.groupBox1_0.Controls.Add(this.tbCardExpDate_0);
+            this.groupBox1_0.Location = new System.Drawing.Point(6, 86);
+            this.groupBox1_0.Name = "groupBox1_0";
+            this.groupBox1_0.Size = new System.Drawing.Size(131, 60);
+            this.groupBox1_0.TabIndex = 1;
+            this.groupBox1_0.TabStop = false;
+            this.groupBox1_0.Text = "Срок действия";
             // 
-            // tbCardExpDate_1
+            // tbCardExpDate_0
             // 
-            this.tbCardExpDate_1.Location = new System.Drawing.Point(6, 24);
-            this.tbCardExpDate_1.Mask = "00\\/00";
-            this.tbCardExpDate_1.Name = "tbCardExpDate_1";
-            this.tbCardExpDate_1.Size = new System.Drawing.Size(47, 25);
-            this.tbCardExpDate_1.TabIndex = 0;
-            this.tbCardExpDate_1.Text = "1223";
-            this.tbCardExpDate_1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tbCardExpDate_1_MaskInputRejected);
+            this.tbCardExpDate_0.Location = new System.Drawing.Point(6, 24);
+            this.tbCardExpDate_0.Mask = "00\\/00";
+            this.tbCardExpDate_0.Name = "tbCardExpDate_0";
+            this.tbCardExpDate_0.Size = new System.Drawing.Size(47, 25);
+            this.tbCardExpDate_0.TabIndex = 0;
+            this.tbCardExpDate_0.Text = "1223";
+            this.tbCardExpDate_0.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tbCardExpDate_1_MaskInputRejected);
             // 
-            // gbCardNumber
+            // gbCardNumber_0
             // 
-            this.gbCardNumber.Controls.Add(this.tbCardNumber_1);
-            this.gbCardNumber.Location = new System.Drawing.Point(6, 26);
-            this.gbCardNumber.Name = "gbCardNumber";
-            this.gbCardNumber.Size = new System.Drawing.Size(188, 56);
-            this.gbCardNumber.TabIndex = 0;
-            this.gbCardNumber.TabStop = false;
-            this.gbCardNumber.Text = "Номер";
+            this.gbCardNumber_0.Controls.Add(this.tbCardNumber_0);
+            this.gbCardNumber_0.Location = new System.Drawing.Point(6, 26);
+            this.gbCardNumber_0.Name = "gbCardNumber_0";
+            this.gbCardNumber_0.Size = new System.Drawing.Size(188, 56);
+            this.gbCardNumber_0.TabIndex = 0;
+            this.gbCardNumber_0.TabStop = false;
+            this.gbCardNumber_0.Text = "Номер";
             // 
-            // tbCardNumber_1
+            // tbCardNumber_0
             // 
-            this.tbCardNumber_1.Location = new System.Drawing.Point(6, 21);
-            this.tbCardNumber_1.Mask = "0000 0000 0000 0000";
-            this.tbCardNumber_1.Name = "tbCardNumber_1";
-            this.tbCardNumber_1.Size = new System.Drawing.Size(139, 25);
-            this.tbCardNumber_1.TabIndex = 2;
-            this.tbCardNumber_1.Text = "1111111111111111";
-            this.tbCardNumber_1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tbCardNumber_1_MaskInputRejected);
+            this.tbCardNumber_0.Location = new System.Drawing.Point(6, 21);
+            this.tbCardNumber_0.Mask = "0000 0000 0000 0000";
+            this.tbCardNumber_0.Name = "tbCardNumber_0";
+            this.tbCardNumber_0.Size = new System.Drawing.Size(139, 25);
+            this.tbCardNumber_0.TabIndex = 2;
+            this.tbCardNumber_0.Text = "1111111111111111";
+            this.tbCardNumber_0.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tbCardNumber_1_MaskInputRejected);
             // 
             // tabPageBankomat2
             // 
@@ -271,55 +271,45 @@
             this.Text = "Form1";
             this.tcBanks.ResumeLayout(false);
             this.tabPageBankomat1.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.gbCard.ResumeLayout(false);
-            this.gbKeyboard.ResumeLayout(false);
-            this.gbKeyboard.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.gbCardInfo.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.gbCardNumber.ResumeLayout(false);
-            this.gbCardNumber.PerformLayout();
+            this.flowLayoutPanel2_0.ResumeLayout(false);
+            this.gbCard_0.ResumeLayout(false);
+            this.gbKeyboard_0.ResumeLayout(false);
+            this.gbKeyboard_0.PerformLayout();
+            this.flowLayoutPanel1_0.ResumeLayout(false);
+            this.flowLayoutPanel1_0.PerformLayout();
+            this.gbCardInfo_0.ResumeLayout(false);
+            this.groupBox1_0.ResumeLayout(false);
+            this.groupBox1_0.PerformLayout();
+            this.gbCardNumber_0.ResumeLayout(false);
+            this.gbCardNumber_0.PerformLayout();
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.TextBox tbPass_1;
-
-        private System.Windows.Forms.TextBox textBox2;
-
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnInsertTakeCard_1;
-        private System.Windows.Forms.Button btnKeyConfirm;
-        private System.Windows.Forms.Button btnTakeCash;
-        private System.Windows.Forms.Button btnTakeCheck;
-        private System.Windows.Forms.RadioButton cardinside_1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.GroupBox gbCard;
-        private System.Windows.Forms.GroupBox gbCardInfo;
-        private System.Windows.Forms.GroupBox gbCardNumber;
-        private System.Windows.Forms.GroupBox gbKeyboard;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TabPage tabPageBankomat1;
-        private System.Windows.Forms.TabPage tabPageBankomat2;
-        private System.Windows.Forms.MaskedTextBox tbCardExpDate_1;
-        private System.Windows.Forms.MaskedTextBox tbCardNumber_1;
         private System.Windows.Forms.TabControl tcBanks;
-        private System.Windows.Forms.TextBox textBox1;
-
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-
-        private System.Windows.Forms.Button button2;
-
-        private System.Windows.Forms.Button button1;
-
-        private System.Windows.Forms.MaskedTextBox tbCardNumber;
-        private System.Windows.Forms.MaskedTextBox tbCardExpDate;
+        
+        private System.Windows.Forms.TabPage tabPageBankomat1;
+        private System.Windows.Forms.Button btnInsertTakeCard_0;
+        private System.Windows.Forms.TextBox tbMessage_0;
+        private System.Windows.Forms.TextBox tbPass_0;
+        private System.Windows.Forms.Button btnCancel_0;
+        private System.Windows.Forms.Button btnConfirm_0;
+        private System.Windows.Forms.MaskedTextBox tbCardExpDate_0;
+        private System.Windows.Forms.MaskedTextBox tbCardNumber_0;
+        private System.Windows.Forms.RadioButton rbCardInside_0;
+        private System.Windows.Forms.Button btnTakeCash_0;
+        private System.Windows.Forms.Button btnTakeCheck_0;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1_0;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2_0;
+        private System.Windows.Forms.GroupBox gbCard_0;
+        private System.Windows.Forms.GroupBox gbCardInfo_0;
+        private System.Windows.Forms.GroupBox gbCardNumber_0;
+        private System.Windows.Forms.GroupBox gbKeyboard_0;
+        private System.Windows.Forms.GroupBox groupBox1_0;
+        
+        
+        private System.Windows.Forms.TabPage tabPageBankomat2;
+        
 
         #endregion
-
-        private System.Windows.Forms.TabControl tcBank1;
     }
 }
