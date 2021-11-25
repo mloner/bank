@@ -10,6 +10,8 @@ namespace Bank.Models
         public CheckPrinter CheckPrinter { get; set; }
         
         public Card CurrentCard { get; set; }
+        public int Id { get; set; }
+        public BankomatState State { get; set; }
         
         
 
@@ -18,6 +20,7 @@ namespace Bank.Models
             CardReader = new CardReader();
             CashDispenser = new CashDispenser();
             CheckPrinter = new CheckPrinter();
+            State = BankomatState.NoCard;
         }
 
         // говно переделывай

@@ -59,6 +59,7 @@
         <Compile Include="Models\Account.cs" />
         <Compile Include="Models\Bank.cs" />
         <Compile Include="Models\Bankomat\Bankomat.cs" />
+        <Compile Include="Models\Bankomat\BankomatState.cs" />
         <Compile Include="Models\Bankomat\CardReader.cs" />
         <Compile Include="Models\Bankomat\CashDispenser.cs" />
         <Compile Include="Models\Bankomat\CheckPrinter.cs" />

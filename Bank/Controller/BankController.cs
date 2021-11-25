@@ -18,8 +18,14 @@ namespace Bank.Controller
             {
                 Bankomats = new List<Bankomat>()
                 {
-                    new Bankomat(),
                     new Bankomat()
+                    {
+                        Id = 0,
+                    },
+                    new Bankomat()
+                    {
+                        Id = 1
+                    }
                 },
                 Clients = new List<Client>()
                 {
@@ -79,7 +85,7 @@ namespace Bank.Controller
             Bank.GetAllCards();
         }
 
-        private bool CheckExp(Card card)
+        private bool CheckCardDateExp(Card card)
         {
             DateTime now = DateTime.Now;
             if (now.CompareTo(card.ExpDatetime) < 0)
@@ -95,10 +101,7 @@ namespace Bank.Controller
         public void InsertCard(int bankomatNum, string cardNum, string cardExpDate)
         {
             var currentBankomat = Bank.Bankomats[bankomatNum];
-            //var insertedCard = currentBank.InsertCard(cardNum, cardExpDate);
-            var correct = false;
             
-            //check card exp
             //find card
             var card = Bank.Cards.FirstOrDefault(x => x.Number == cardNum);
             
@@ -110,10 +113,11 @@ namespace Bank.Controller
             {
                 if (!card.Blocked)
                 {
-                    if (CheckExp(card))
+                    if (CheckCardDateExp(card))
                     {
-                        currentBankomat.CurrentCard = card; 
+                        currentBankomat.CurrentCard = card;
                         Form.CardInserted();
+                        currentBankomat.State = BankomatState.Pincode; //waiting for pincode
                     }
                     else
                     {
@@ -127,11 +131,32 @@ namespace Bank.Controller
             }
         }
 
+        public void CheckPassword(int bankomatNum, string pass)
+        {
+            var bankomat = Bank.Bankomats[bankomatNum];
+            if (bankomat.CurrentCard.Pin == pass)
+            {
+                bankomat.State = BankomatState.WaitCommand;
+                Form.WaitComand();
+            }
+            else
+            {
+                Form.ErrorMessage(Form1.ErrorType.WrongPassword);
+                //Form.
+            }
+        }
+        
         public void PullCard(int bankomatNum)
         {
             var currentBankomat = Bank.Bankomats[bankomatNum];
             currentBankomat.CurrentCard = null;
             Form.CardPulled();
         }
+        
+        public bool IsBankomatInState(int bankomanNum, BankomatState state)
+        {
+            return this.Bank.Bankomats[bankomanNum].State == state;
+        }
+        
     }
 }
