@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,16 +78,9 @@ namespace Bank
         {
             //throw new System.NotImplementedException();
         }
-
-        public enum ErrorType
-        {
-            WrongNumber,
-            Expire,
-            Blocked,
-            WrongPassword
-        }
         
-        public void ErrorMessage(ErrorType type, int attempts = 4)
+        
+        public void ErrorMessage(ErrorType type, object param = null)
         {
             var textBox = Controls.Find($"tbMessage_0", true).First() as TextBox;
             switch (type)
@@ -101,7 +95,7 @@ namespace Bank
                     textBox.Text = "Эта карта заблокирована и не может быть возвращена";
                     break;
                 case ErrorType.WrongPassword:
-                    switch (attempts)
+                    switch ((int)param)
                     {
                         case 2:
                             textBox.Text = "Неверный пароль, осталось 2 попытки";
@@ -113,8 +107,15 @@ namespace Bank
                             textBox.Text = "Неверный пароль, карта заблокирована";
                             break;
                     }
-                    
-                    
+                    break;
+                case ErrorType.NotEnoughAccountMoney:
+                    textBox.Text = "Недостаточно денег на счету, введите другую сумму";
+                    break;
+                case ErrorType.NotEnoughBankomatMoney:
+                    textBox.Text = "Недостаточно денег в банкомате, введите другую сумму";
+                    break;
+                case ErrorType.LimitIsReached:
+                    textBox.Text = $"Суточный лимит превышен на {(double)param} руб.";
                     break;
             }
             
@@ -144,6 +145,29 @@ namespace Bank
             
             var textBox = Controls.Find($"tbMessage_{bankomatNum}", true).First() as TextBox;
             textBox.Text = "Выберите действие";
+            
+            var accounts =  BankController.GetAccountsByCardNum(BankController.Bank.Bankomats[bankomatNum].CurrentCard.Number);
+
+            var mainAcc = accounts[0];
+            var savAcc = accounts[1];
+            
+            //update balances
+            //main acc
+            var tbMainBalance = Controls.Find($"tbMainBalance_{bankomatNum}", true).First() as TextBox;
+            tbMainBalance.Text = $"{mainAcc.Balance.ToString(CultureInfo.InvariantCulture)} руб.";
+            //sav acc
+            var tbSavingBalance = Controls.Find($"tbSavingBalance_{bankomatNum}", true).First() as TextBox;
+            tbSavingBalance.Text = $"{savAcc.Balance.ToString(CultureInfo.InvariantCulture)} руб.";
+            
+            
+            
+            //clear accounts
+            //main
+            var mainAmount = Controls.Find($"tbMainAmount_{bankomatNum}", true).First() as TextBox;
+            mainAmount.Clear();
+            //sav
+            var savAmount = Controls.Find($"tbSavingAmount_{bankomatNum}", true).First() as TextBox;
+            savAmount.Clear();
         }
 
         public void CardPulled(int bankomatNum)
@@ -168,7 +192,26 @@ namespace Bank
             cardButton.Enabled = true;
             
         }
-
         
+
+        private void btnMainWithdraw_0_Click(object sender, EventArgs e)
+        {
+            var bankomatNum = 0;
+            var tbAmount = Controls.Find($"tbMainAmount_{bankomatNum}", true).First() as TextBox;
+            WithdrawMoney(bankomatNum, AccountType.Main, tbAmount);
+        }
+
+        private void btnSavingWithdraw_0_Click(object sender, EventArgs e)
+        {
+            var bankomatNum = 0;
+            var tbAmount = Controls.Find($"tbSavingAmount_{bankomatNum}", true).First() as TextBox;
+            WithdrawMoney(bankomatNum, AccountType.Saving, tbAmount);
+        }
+
+        private void WithdrawMoney(int bankomatNum, AccountType accountType, TextBox textBox)
+        {
+            var amount = textBox.Text == "" ? 0 : double.Parse(textBox.Text);
+            BankController.WithdrawMoney(bankomatNum, accountType, amount);
+        }
     }
 }

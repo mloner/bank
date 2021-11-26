@@ -1,4 +1,6 @@
-﻿namespace Bank.Models
+﻿using System.ComponentModel;
+
+namespace Bank.Models
 {
 
     public enum AccountType

@@ -9,5 +9,12 @@ namespace Bank.Models
         
         public Card Card { get; set; }
         public List<Account> Accounts { get; set; }
+        
+        public double DayLimit { get; set; }
+
+        public Client()
+        {
+            DayLimit = 5000;
+        }
     }
 }

@@ -50,7 +50,7 @@ namespace Bank.Controller
                             },
                             new Account()
                             {
-                                Balance = 70.0,
+                                Balance = 1_000_000.0,
                                 Type = AccountType.Saving
                             }
                         }
@@ -108,7 +108,7 @@ namespace Bank.Controller
             
             if (card == null)
             {
-                Form.ErrorMessage(Form1.ErrorType.WrongNumber);
+                Form.ErrorMessage(ErrorType.WrongNumber);
             }
             else
             {
@@ -122,12 +122,12 @@ namespace Bank.Controller
                     }
                     else
                     {
-                        Form.ErrorMessage(Form1.ErrorType.Expire);
+                        Form.ErrorMessage(ErrorType.Expire);
                     }
                 }
                 else
                 {
-                    Form.ErrorMessage(Form1.ErrorType.Blocked);
+                    Form.ErrorMessage(ErrorType.Blocked);
                 }
             }
         }
@@ -150,13 +150,13 @@ namespace Bank.Controller
                     bankomat.CurrentCard.Blocked = true;
                     Bank.Bankomats[bankomatNum].State = BankomatState.NoCard;
                     
-                    Form.ErrorMessage(Form1.ErrorType.WrongPassword, bankomat.CurrentCard.Attempts); 
+                    Form.ErrorMessage(ErrorType.WrongPassword, bankomat.CurrentCard.Attempts); 
                     Bank.Bankomats[bankomatNum].CurrentCard = null;
                     Form.CardBlocked(bankomat.Id);
                 }
                 else
                 {
-                    Form.ErrorMessage(Form1.ErrorType.WrongPassword, bankomat.CurrentCard.Attempts); 
+                    Form.ErrorMessage(ErrorType.WrongPassword, bankomat.CurrentCard.Attempts); 
                 }
                 
                 
@@ -164,8 +164,7 @@ namespace Bank.Controller
 
             
         }
-        
-        
+
         public void PullCard(int bankomatNum)
         {
             var currentBankomat = Bank.Bankomats[bankomatNum];
@@ -174,11 +173,60 @@ namespace Bank.Controller
             Form.CardPulled(currentBankomat.Id);
         }
         
-        
         public bool IsBankomatInState(int bankomanNum, BankomatState state)
         {
             return this.Bank.Bankomats[bankomanNum].State == state;
         }
+
+        public List<Account> GetAccountsByCardNum(string cardNum)
+        {
+            return GetAccountsByClient(GetClientByCardNum(cardNum));
+        }
+
+        public List<Account> GetAccountsByClient(Client client)
+        {
+            return client.Accounts;
+        }
+
+        public Client GetClientByCardNum(string cardNum)
+        {
+            return this.Bank.Clients.First(x => x.Card.Number == cardNum);
+        }
+
+        public void WithdrawMoney(int bankomanNum, AccountType accountType, double amount)
+        {
+            var card = this.Bank.Bankomats[bankomanNum].CurrentCard;
+            var client = GetClientByCardNum(card.Number);
+            var accounts = GetAccountsByCardNum(card.Number);
+            var acc = accounts.First(x => x.Type == accountType);
+            
+            //пытаемся снять
+            if(client.DayLimit < amount) // суточный лимит клеинта исчерпан
+            {
+                Form.WaitComand(bankomanNum);
+                Form.ErrorMessage(ErrorType.LimitIsReached, amount - client.DayLimit);
+            }
+            else if (acc.Balance < amount) // не хватает денег на балансе счета
+            {
+                Form.WaitComand(bankomanNum);
+                Form.ErrorMessage(ErrorType.NotEnoughAccountMoney);
+            }
+            else if(Bank.Bankomats[bankomanNum].Balance < amount) // не хватает денег на балансе банкомата
+            {
+                Form.WaitComand(bankomanNum);
+                Form.ErrorMessage(ErrorType.NotEnoughBankomatMoney);
+            }
+            else
+            {
+                acc.Balance -= amount;
+                client.DayLimit -= amount;
+                Form.WaitComand(bankomanNum);
+            }
+        }
         
+        //public void DepositMoney(int bankomatNum, AccountType accountType, double amount)
+        
+       // public double GetBalanceByCardNum
+
     }
 }

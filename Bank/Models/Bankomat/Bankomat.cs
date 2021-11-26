@@ -13,6 +13,8 @@ namespace Bank.Models
         public int Id { get; set; }
         public BankomatState State { get; set; }
         
+        public double Balance { get; set; }
+        
         
 
         public Bankomat()
@@ -21,6 +23,7 @@ namespace Bank.Models
             CashDispenser = new CashDispenser();
             CheckPrinter = new CheckPrinter();
             State = BankomatState.NoCard;
+            Balance = 10000;
         }
 
         // говно переделывай

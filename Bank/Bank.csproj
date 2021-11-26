@@ -65,6 +65,7 @@
         <Compile Include="Models\Bankomat\CheckPrinter.cs" />
         <Compile Include="Models\Card.cs" />
         <Compile Include="Models\Client.cs" />
+        <Compile Include="Models\ErrorType.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="Form1.resx">
