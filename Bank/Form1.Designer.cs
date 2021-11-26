@@ -44,23 +44,23 @@
             this.flowLayoutPanel1_0 = new System.Windows.Forms.FlowLayoutPanel();
             this.tbMessage_0 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnMainTosaving_1 = new System.Windows.Forms.Button();
+            this.btnMainWithdraw_1 = new System.Windows.Forms.Button();
+            this.tbMainAmount_1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbMainBalance_1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSavingTomain_1 = new System.Windows.Forms.Button();
+            this.btnSavingWithdraw_1 = new System.Windows.Forms.Button();
+            this.tbSavingAmount_1 = new System.Windows.Forms.TextBox();
+            this.tbSavingBalance_1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbCardInfo_0 = new System.Windows.Forms.GroupBox();
             this.groupBox1_0 = new System.Windows.Forms.GroupBox();
             this.tbCardExpDate_0 = new System.Windows.Forms.MaskedTextBox();
             this.gbCardNumber_0 = new System.Windows.Forms.GroupBox();
             this.tbCardNumber_0 = new System.Windows.Forms.MaskedTextBox();
             this.tabPageBankomat2 = new System.Windows.Forms.TabPage();
-            this.btnMainWithdraw_1 = new System.Windows.Forms.Button();
-            this.btnMainTosaving_1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbSavingBalance_1 = new System.Windows.Forms.TextBox();
-            this.tbMainAmount_1 = new System.Windows.Forms.TextBox();
-            this.tbSavingAmount_1 = new System.Windows.Forms.TextBox();
-            this.btnSavingWithdraw_1 = new System.Windows.Forms.Button();
-            this.btnSavingTomain_1 = new System.Windows.Forms.Button();
             this.tcBanks.SuspendLayout();
             this.tabPageBankomat1.SuspendLayout();
             this.flowLayoutPanel2_0.SuspendLayout();
@@ -230,6 +230,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Основной счет";
             // 
+            // btnMainTosaving_1
+            // 
+            this.btnMainTosaving_1.Location = new System.Drawing.Point(99, 198);
+            this.btnMainTosaving_1.Name = "btnMainTosaving_1";
+            this.btnMainTosaving_1.Size = new System.Drawing.Size(95, 87);
+            this.btnMainTosaving_1.TabIndex = 4;
+            this.btnMainTosaving_1.Text = "Перевести на накопительный счет";
+            this.btnMainTosaving_1.UseVisualStyleBackColor = true;
+            // 
+            // btnMainWithdraw_1
+            // 
+            this.btnMainWithdraw_1.Location = new System.Drawing.Point(6, 198);
+            this.btnMainWithdraw_1.Name = "btnMainWithdraw_1";
+            this.btnMainWithdraw_1.Size = new System.Drawing.Size(87, 87);
+            this.btnMainWithdraw_1.TabIndex = 3;
+            this.btnMainWithdraw_1.Text = "Снять деньги";
+            this.btnMainWithdraw_1.UseVisualStyleBackColor = true;
+            // 
+            // tbMainAmount_1
+            // 
+            this.tbMainAmount_1.Location = new System.Drawing.Point(6, 159);
+            this.tbMainAmount_1.Name = "tbMainAmount_1";
+            this.tbMainAmount_1.Size = new System.Drawing.Size(188, 22);
+            this.tbMainAmount_1.TabIndex = 2;
+            // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(53, 44);
@@ -259,6 +284,47 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
+            // 
+            // btnSavingTomain_1
+            // 
+            this.btnSavingTomain_1.Location = new System.Drawing.Point(105, 198);
+            this.btnSavingTomain_1.Name = "btnSavingTomain_1";
+            this.btnSavingTomain_1.Size = new System.Drawing.Size(95, 87);
+            this.btnSavingTomain_1.TabIndex = 6;
+            this.btnSavingTomain_1.Text = "Перевести на основной счет";
+            this.btnSavingTomain_1.UseVisualStyleBackColor = true;
+            // 
+            // btnSavingWithdraw_1
+            // 
+            this.btnSavingWithdraw_1.Location = new System.Drawing.Point(6, 198);
+            this.btnSavingWithdraw_1.Name = "btnSavingWithdraw_1";
+            this.btnSavingWithdraw_1.Size = new System.Drawing.Size(87, 87);
+            this.btnSavingWithdraw_1.TabIndex = 5;
+            this.btnSavingWithdraw_1.Text = "Снять деньги";
+            this.btnSavingWithdraw_1.UseVisualStyleBackColor = true;
+            // 
+            // tbSavingAmount_1
+            // 
+            this.tbSavingAmount_1.Location = new System.Drawing.Point(6, 159);
+            this.tbSavingAmount_1.Name = "tbSavingAmount_1";
+            this.tbSavingAmount_1.Size = new System.Drawing.Size(188, 22);
+            this.tbSavingAmount_1.TabIndex = 4;
+            // 
+            // tbSavingBalance_1
+            // 
+            this.tbSavingBalance_1.Location = new System.Drawing.Point(6, 71);
+            this.tbSavingBalance_1.Name = "tbSavingBalance_1";
+            this.tbSavingBalance_1.ReadOnly = true;
+            this.tbSavingBalance_1.Size = new System.Drawing.Size(188, 22);
+            this.tbSavingBalance_1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(43, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Баланс";
             // 
             // gbCardInfo_0
             // 
@@ -320,72 +386,6 @@
             this.tabPageBankomat2.TabIndex = 1;
             this.tabPageBankomat2.Text = "Банкомат 2";
             this.tabPageBankomat2.UseVisualStyleBackColor = true;
-            // 
-            // btnMainWithdraw_1
-            // 
-            this.btnMainWithdraw_1.Location = new System.Drawing.Point(6, 198);
-            this.btnMainWithdraw_1.Name = "btnMainWithdraw_1";
-            this.btnMainWithdraw_1.Size = new System.Drawing.Size(87, 87);
-            this.btnMainWithdraw_1.TabIndex = 3;
-            this.btnMainWithdraw_1.Text = "Снять деньги";
-            this.btnMainWithdraw_1.UseVisualStyleBackColor = true;
-            // 
-            // btnMainTosaving_1
-            // 
-            this.btnMainTosaving_1.Location = new System.Drawing.Point(99, 198);
-            this.btnMainTosaving_1.Name = "btnMainTosaving_1";
-            this.btnMainTosaving_1.Size = new System.Drawing.Size(95, 87);
-            this.btnMainTosaving_1.TabIndex = 4;
-            this.btnMainTosaving_1.Text = "Перевести на накопительный счет";
-            this.btnMainTosaving_1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(43, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Баланс";
-            // 
-            // tbSavingBalance_1
-            // 
-            this.tbSavingBalance_1.Location = new System.Drawing.Point(6, 71);
-            this.tbSavingBalance_1.Name = "tbSavingBalance_1";
-            this.tbSavingBalance_1.ReadOnly = true;
-            this.tbSavingBalance_1.Size = new System.Drawing.Size(188, 22);
-            this.tbSavingBalance_1.TabIndex = 3;
-            // 
-            // tbMainAmount_1
-            // 
-            this.tbMainAmount_1.Location = new System.Drawing.Point(6, 159);
-            this.tbMainAmount_1.Name = "tbMainAmount_1";
-            this.tbMainAmount_1.Size = new System.Drawing.Size(188, 22);
-            this.tbMainAmount_1.TabIndex = 2;
-            // 
-            // tbSavingAmount_1
-            // 
-            this.tbSavingAmount_1.Location = new System.Drawing.Point(6, 159);
-            this.tbSavingAmount_1.Name = "tbSavingAmount_1";
-            this.tbSavingAmount_1.Size = new System.Drawing.Size(188, 22);
-            this.tbSavingAmount_1.TabIndex = 4;
-            // 
-            // btnSavingWithdraw_1
-            // 
-            this.btnSavingWithdraw_1.Location = new System.Drawing.Point(6, 198);
-            this.btnSavingWithdraw_1.Name = "btnSavingWithdraw_1";
-            this.btnSavingWithdraw_1.Size = new System.Drawing.Size(87, 87);
-            this.btnSavingWithdraw_1.TabIndex = 5;
-            this.btnSavingWithdraw_1.Text = "Снять деньги";
-            this.btnSavingWithdraw_1.UseVisualStyleBackColor = true;
-            // 
-            // btnSavingTomain_1
-            // 
-            this.btnSavingTomain_1.Location = new System.Drawing.Point(105, 198);
-            this.btnSavingTomain_1.Name = "btnSavingTomain_1";
-            this.btnSavingTomain_1.Size = new System.Drawing.Size(95, 87);
-            this.btnSavingTomain_1.TabIndex = 6;
-            this.btnSavingTomain_1.Text = "Перевести на основной счет";
-            this.btnSavingTomain_1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
