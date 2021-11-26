@@ -39,6 +39,7 @@ namespace Bank.Controller
                             Number = "1111 1111 1111 1111",
                             ExpDatetime = new DateTime(2023, 11, 1),
                             Pin = "1234"
+                            
                         },
                         Accounts = new List<Account>()
                         {
@@ -134,24 +135,45 @@ namespace Bank.Controller
         public void CheckPassword(int bankomatNum, string pass)
         {
             var bankomat = Bank.Bankomats[bankomatNum];
-            if (bankomat.CurrentCard.Pin == pass)
+            if (bankomat.CurrentCard.Pin == pass && bankomat.CurrentCard.Attempts != 0)
             {
                 bankomat.State = BankomatState.WaitCommand;
+                bankomat.CurrentCard.Attempts = 3;
                 Form.WaitComand(bankomat.Id);
             }
             else
             {
-                Form.ErrorMessage(Form1.ErrorType.WrongPassword);
-                //Form.
+                bankomat.CurrentCard.Attempts -= 1;
+                // если кончились попытки карта блокируется
+                if (bankomat.CurrentCard.Attempts == 0)
+                {
+                    bankomat.CurrentCard.Blocked = true;
+                    Bank.Bankomats[bankomatNum].State = BankomatState.NoCard;
+                    
+                    Form.ErrorMessage(Form1.ErrorType.WrongPassword, bankomat.CurrentCard.Attempts); 
+                    Bank.Bankomats[bankomatNum].CurrentCard = null;
+                    Form.CardBlocked(bankomat.Id);
+                }
+                else
+                {
+                    Form.ErrorMessage(Form1.ErrorType.WrongPassword, bankomat.CurrentCard.Attempts); 
+                }
+                
+                
             }
+
+            
         }
+        
         
         public void PullCard(int bankomatNum)
         {
             var currentBankomat = Bank.Bankomats[bankomatNum];
             currentBankomat.CurrentCard = null;
+            Bank.Bankomats[bankomatNum].State = BankomatState.NoCard;
             Form.CardPulled(currentBankomat.Id);
         }
+        
         
         public bool IsBankomatInState(int bankomanNum, BankomatState state)
         {

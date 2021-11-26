@@ -86,7 +86,7 @@ namespace Bank
             WrongPassword
         }
         
-        public void ErrorMessage(ErrorType type)
+        public void ErrorMessage(ErrorType type, int attempts = 4)
         {
             var textBox = Controls.Find($"tbMessage_0", true).First() as TextBox;
             switch (type)
@@ -101,7 +101,19 @@ namespace Bank
                     textBox.Text = "Эта карта заблокирована и не может быть возвращена";
                     break;
                 case ErrorType.WrongPassword:
-                    textBox.Text = "Неверный пароль, повторите ввод";
+                    switch (attempts)
+                    {
+                        case 2:
+                            textBox.Text = "Неверный пароль, осталось 2 попытки";
+                            break;
+                        case 1:
+                            textBox.Text = "Неверный пароль, осталось 1 попытка";
+                            break;
+                        case 0:
+                            textBox.Text = "Неверный пароль, карта заблокирована";
+                            break;
+                    }
+                    
                     
                     break;
             }
@@ -144,6 +156,17 @@ namespace Bank
             
             var cardButton = Controls.Find($"btnInsertTakeCard_{bankomatNum}", true).First() as Button;
             cardButton.Text = "Вставить карту";
+        }
+        
+        public void CardBlocked(int bankomatNum)
+        {
+            var rb = Controls.Find($"rbCardinside_{bankomatNum}", true).First() as RadioButton;
+            rb.Checked = false;
+
+            var cardButton = Controls.Find($"btnInsertTakeCard_{bankomatNum}", true).First() as Button;
+            cardButton.Text = "Вставить карту";
+            cardButton.Enabled = true;
+            
         }
     }
 }
