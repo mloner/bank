@@ -18,3 +18,14 @@ C:\Users\Andrew\Desktop\Учеба\Технологии распределенн
 C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\bin\Debug\Bank.exe.config
 C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\bin\Debug\Bank.exe
 C:\Users\Andrew\Desktop\Учеба\Технологии распределенного реестра\bank\Bank\bin\Debug\Bank.pdb
+C:\Users\Владик\Desktop\bank\Bank\bin\Debug\Bank.exe.config
+C:\Users\Владик\Desktop\bank\Bank\bin\Debug\Bank.exe
+C:\Users\Владик\Desktop\bank\Bank\bin\Debug\Bank.pdb
+C:\Users\Владик\Desktop\bank\Bank\obj\Debug\Bank.csproj.AssemblyReference.cache
+C:\Users\Владик\Desktop\bank\Bank\obj\Debug\Bank.csproj.SuggestedBindingRedirects.cache
+C:\Users\Владик\Desktop\bank\Bank\obj\Debug\Bank.Form1.resources
+C:\Users\Владик\Desktop\bank\Bank\obj\Debug\Bank.Properties.Resources.resources
+C:\Users\Владик\Desktop\bank\Bank\obj\Debug\Bank.csproj.GenerateResource.cache
+C:\Users\Владик\Desktop\bank\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
+C:\Users\Владик\Desktop\bank\Bank\obj\Debug\Bank.exe
+C:\Users\Владик\Desktop\bank\Bank\obj\Debug\Bank.pdb

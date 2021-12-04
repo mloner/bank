@@ -232,5 +232,49 @@ namespace Bank
             var amount = tbAmount.Text == "" ? 0 : double.Parse(tbAmount.Text);
             BankController.TransitMoney(bankomatNum, accountType, amount);
         }
+
+        private void btnInsertTakeCard_1_Click(object sender, EventArgs e)
+        {
+            var bankomatNum = 1;
+            btnInsertTakeCard(bankomatNum);
+        }
+
+        private void btnConfirm_1_Click(object sender, EventArgs e)
+        {
+            var bankomatNum = 1;
+            btnKeyConfirm(bankomatNum);
+        }
+
+        private void btnMainWithdraw_1_Click(object sender, EventArgs e)
+        {
+            var bankomatNum = 1;
+            var tbAmount = Controls.Find($"tbMainAmount_{bankomatNum}", true).First() as TextBox;
+            WithdrawMoney(bankomatNum, AccountType.Main, tbAmount);
+        }
+
+        private void btnMainTosaving_1_Click(object sender, EventArgs e)
+        {
+            AccountType accountType = AccountType.Main;
+            int bankomatNum = 1;
+            var tbAmount = Controls.Find($"tbMainAmount_{bankomatNum}", true).First() as TextBox;
+            var amount = tbAmount.Text == "" ? 0 : double.Parse(tbAmount.Text);
+            BankController.TransitMoney(bankomatNum, accountType, amount);
+        }
+
+        private void btnSavingWithdraw_1_Click(object sender, EventArgs e)
+        {
+            var bankomatNum = 1;
+            var tbAmount = Controls.Find($"tbSavingAmount_{bankomatNum}", true).First() as TextBox;
+            WithdrawMoney(bankomatNum, AccountType.Saving, tbAmount);
+        }
+
+        private void btnSavingTomain_1_Click(object sender, EventArgs e)
+        {
+            AccountType accountType = AccountType.Saving;
+            int bankomatNum = 1;
+            var tbAmount = Controls.Find($"tbSavingAmount_{bankomatNum}", true).First() as TextBox;
+            var amount = tbAmount.Text == "" ? 0 : double.Parse(tbAmount.Text);
+            BankController.TransitMoney(bankomatNum, accountType, amount);
+        }
     }
 }
