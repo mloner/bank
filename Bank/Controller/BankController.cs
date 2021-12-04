@@ -217,7 +217,7 @@ namespace Bank.Controller
             //     Form.WaitComand(bankomanNum);
             //     Form.ErrorMessage(ErrorType.NotEnoughBankomatMoney);
             // }
-            else if(!TryWithdraw(amount))
+            else if(!TryWithdraw(amount, bankomanNum))
             {
                 
             }
@@ -229,9 +229,28 @@ namespace Bank.Controller
             }
         }
 
-        private bool TryWithdraw(double amount)
+        private bool TryWithdraw(double amount, int bankomanNum)
         {
+            bool Done = false;
+            int nominal = (int) BanknoteType._5000;
+            BanknoteType type = BanknoteType._5000;
+            Bankomat bankomat = this.Bank.Bankomats[bankomanNum];
+
+            foreach (var banknote in bankomat.Banknotes.Reverse())
+            {
+                if (amount > nominal)
+                {
+                    
+                    if (bankomat.Banknotes[banknote.Key] != 0)
+                    {
+                        amount -= nominal;
+                        
+                    }
+                    
+                } 
+            }
             
+       
             
             return true;
         }
