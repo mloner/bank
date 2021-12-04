@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace Bank.Models
+namespace Bank.Models.Bankomat
 {
     public class Bankomat
     {
@@ -13,7 +14,8 @@ namespace Bank.Models
         public int Id { get; set; }
         public BankomatState State { get; set; }
         
-        public double Balance { get; set; }
+        public Dictionary<BanknoteType, int> Banknotes { get; set; }
+        
         
         
 
@@ -23,7 +25,16 @@ namespace Bank.Models
             CashDispenser = new CashDispenser();
             CheckPrinter = new CheckPrinter();
             State = BankomatState.NoCard;
-            Balance = 10000;
+            Banknotes = new Dictionary<BanknoteType, int>()
+            {
+                {BanknoteType._50, 10},
+                {BanknoteType._100, 12},
+                {BanknoteType._200, 1},
+                {BanknoteType._500, 30},
+                {BanknoteType._1000, 10},
+                {BanknoteType._2000, 10},
+                {BanknoteType._5000, 2},
+            };
         }
 
         // говно переделывай

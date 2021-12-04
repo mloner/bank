@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Bank.Models;
+using Bank.Models.Bankomat;
 
 namespace Bank.Controller
 {
@@ -211,10 +212,14 @@ namespace Bank.Controller
                 Form.WaitComand(bankomanNum);
                 Form.ErrorMessage(ErrorType.NotEnoughAccountMoney);
             }
-            else if(Bank.Bankomats[bankomanNum].Balance < amount) // не хватает денег на балансе банкомата
+            // else if(Bank.Bankomats[bankomanNum].Balance < amount) // не хватает денег на балансе банкомата
+            // {
+            //     Form.WaitComand(bankomanNum);
+            //     Form.ErrorMessage(ErrorType.NotEnoughBankomatMoney);
+            // }
+            else if(!TryWithdraw(amount))
             {
-                Form.WaitComand(bankomanNum);
-                Form.ErrorMessage(ErrorType.NotEnoughBankomatMoney);
+                
             }
             else
             {
@@ -222,6 +227,13 @@ namespace Bank.Controller
                 client.DayLimit -= amount;
                 Form.WaitComand(bankomanNum);
             }
+        }
+
+        private bool TryWithdraw(double amount)
+        {
+            
+            
+            return true;
         }
         
         //public void DepositMoney(int bankomatNum, AccountType accountType, double amount)

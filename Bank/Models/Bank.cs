@@ -5,7 +5,7 @@ namespace Bank.Models
 {
     public class Bank
     {
-        public List<Bankomat> Bankomats { get; set; }
+        public List<Bankomat.Bankomat> Bankomats { get; set; }
         public List<Client> Clients { get; set; }
         public List<Card> Cards { get; set; }
 
