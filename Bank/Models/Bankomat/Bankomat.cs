@@ -6,6 +6,7 @@ namespace Bank.Models.Bankomat
 {
     public class Bankomat
     {
+        public List<string> Journal { get; set; }
         public CardReader CardReader { get; set; }
         public CashDispenser CashDispenser { get; set; }
         public CheckPrinter CheckPrinter { get; set; }
@@ -21,6 +22,7 @@ namespace Bank.Models.Bankomat
 
         public Bankomat()
         {
+            Journal = new List<string>();
             CardReader = new CardReader();
             CashDispenser = new CashDispenser();
             CheckPrinter = new CheckPrinter();

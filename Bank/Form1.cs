@@ -64,9 +64,9 @@ namespace Bank
             }
             else
             {
-                BankController.PullCard(0);
+                BankController.PullCard(bankomatNum);
             }
-            
+            BankController.Bank.Bankomats[bankomatNum].Journal = new List<string>();
         }
 
         private void tbCardNumber_1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -275,6 +275,33 @@ namespace Bank
             var tbAmount = Controls.Find($"tbSavingAmount_{bankomatNum}", true).First() as TextBox;
             var amount = tbAmount.Text == "" ? 0 : double.Parse(tbAmount.Text);
             BankController.TransitMoney(bankomatNum, accountType, amount);
+        }
+
+        private void btnTakeCheck_0_Click(object sender, EventArgs e)
+        {
+            int bankomatNum = 0;
+            var journal = BankController.Bank.Bankomats[bankomatNum].Journal;
+            var tbCheck = Controls.Find($"rtbCheck_{bankomatNum}", true).First() as RichTextBox;
+            tbCheck.Clear();
+            tbCheck.Text += $"Спасибо за использование банкомата\nДата: {DateTime.Now.ToString("dd.MM.yyyy")}\n";
+
+            foreach (var elem in journal) {
+                tbCheck.Text += elem + "\n";
+            }        
+        }
+
+        private void btnTakeCheck_1_Click(object sender, EventArgs e)
+        {
+            int bankomatNum = 1;
+            var journal = BankController.Bank.Bankomats[bankomatNum].Journal;
+            var tbCheck = Controls.Find($"rtbCheck_{bankomatNum}", true).First() as RichTextBox;
+            tbCheck.Clear();
+            tbCheck.Text += $"Спасибо за использование банкомата\nДата: {DateTime.Now.ToString("dd.MM.yyyy")}\n";
+
+            foreach (var elem in journal)
+            {
+                tbCheck.Text += elem + "\n";
+            }
         }
     }
 }

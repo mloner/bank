@@ -14,4 +14,17 @@ namespace Bank.Models
         
         public AccountType Type { get; set; }
     }
+    public static class AccountTypeHelper {
+        public static string ToStr(this AccountType accountType)
+        {
+            switch (accountType)
+            {
+                case AccountType.Main:
+                    return "Основной";
+                case AccountType.Saving:
+                    return "Сберегательный";
+                default: return "";
+            }
+        }
+    }
 }

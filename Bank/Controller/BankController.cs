@@ -231,10 +231,12 @@ namespace Bank.Controller
                     client.DayLimit -= amount;
                     
                     Bankomat bankomat = this.Bank.Bankomats[bankomanNum];
+                    bankomat.Journal.Add($"Банкомат выдал {amount} руб.");
                     foreach (var keyValuePair in dict)
                     {
                         bankomat.Banknotes[keyValuePair.Key] = bankomat.Banknotes[keyValuePair.Key] - keyValuePair.Value;
                         Console.WriteLine($"Банкомат выдал {keyValuePair.Value} купюр по {(int)keyValuePair.Key} руб.");
+                        //bankomat.Journal.Add($"Банкомат выдал {keyValuePair.Value} купюр по {(int)keyValuePair.Key} руб.");
                     }
                     
                     Form.WaitComand(bankomanNum);
@@ -282,6 +284,8 @@ namespace Bank.Controller
                 source_acc.Balance -= amount;
                 destination_acc.Balance += amount;
                 Form.WaitComand(BankomatNum);
+                Bankomat bankomat = this.Bank.Bankomats[BankomatNum];
+                bankomat.Journal.Add($"Банкомат перевел {amount} руб. с {source_acc.Type.ToStr()} в {destination_acc.Type.ToStr()}");
             }
             else
             {
