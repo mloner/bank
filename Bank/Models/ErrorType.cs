@@ -8,6 +8,6 @@
         WrongPassword,
         NotEnoughAccountMoney,
         NotEnoughBankomatMoney,
-        LimitIsReached
+        LimitIsReached,
     }
 }

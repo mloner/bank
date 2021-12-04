@@ -217,42 +217,59 @@ namespace Bank.Controller
             //     Form.WaitComand(bankomanNum);
             //     Form.ErrorMessage(ErrorType.NotEnoughBankomatMoney);
             // }
-            else if(!TryWithdraw(amount, bankomanNum))
-            {
-                
-            }
             else
             {
-                acc.Balance -= amount;
-                client.DayLimit -= amount;
-                Form.WaitComand(bankomanNum);
+                var dict = TryWithdraw(amount, bankomanNum);
+                if (dict.Count <= 0)
+                {
+                    Form.WaitComand(bankomanNum);
+                    Form.ErrorMessage(ErrorType.NotEnoughBankomatMoney);
+                }
+                else
+                {
+                    acc.Balance -= amount;
+                    client.DayLimit -= amount;
+                    
+                    Bankomat bankomat = this.Bank.Bankomats[bankomanNum];
+                    foreach (var keyValuePair in dict)
+                    {
+                        bankomat.Banknotes[keyValuePair.Key] = bankomat.Banknotes[keyValuePair.Key] - keyValuePair.Value;
+                        Console.WriteLine($"Банкомат выдал {keyValuePair.Value} купюр по {(int)keyValuePair.Key} руб.");
+                    }
+                    
+                    Form.WaitComand(bankomanNum);
+                }
             }
         }
 
-        private bool TryWithdraw(double amount, int bankomanNum)
+        private Dictionary<BanknoteType, int> TryWithdraw(double amount, int bankomanNum)
         {
-            bool Done = false;
-            int nominal = (int) BanknoteType._5000;
-            BanknoteType type = BanknoteType._5000;
             Bankomat bankomat = this.Bank.Bankomats[bankomanNum];
+
+            Dictionary<BanknoteType, int> result = new Dictionary<BanknoteType, int>();
 
             foreach (var banknote in bankomat.Banknotes.Reverse())
             {
-                if (amount > nominal)
+                while (amount >= (int)banknote.Key && bankomat.Banknotes[banknote.Key] > 0)
                 {
+                    amount -= (int)banknote.Key;
                     
-                    if (bankomat.Banknotes[banknote.Key] != 0)
+                    int sdf;
+                    if (!result.TryGetValue(banknote.Key, out sdf))
                     {
-                        amount -= nominal;
-                        
+                        sdf = 0;
                     }
                     
-                } 
+                    result[banknote.Key] = sdf + 1;
+                }
             }
-            
-       
-            
-            return true;
+
+            if (amount != 0)
+            {
+                result.Clear();
+            }
+
+            return result;
         }
         
         //public void DepositMoney(int bankomatNum, AccountType accountType, double amount)

@@ -112,7 +112,7 @@ namespace Bank
                     textBox.Text = "Недостаточно денег на счету, введите другую сумму";
                     break;
                 case ErrorType.NotEnoughBankomatMoney:
-                    textBox.Text = "Недостаточно денег в банкомате, введите другую сумму";
+                    textBox.Text = "Недостаточно купюр в банкомате, введите другую сумму";
                     break;
                 case ErrorType.LimitIsReached:
                     textBox.Text = $"Суточный лимит превышен на {(double)param} руб.";
