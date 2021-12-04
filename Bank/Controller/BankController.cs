@@ -271,10 +271,23 @@ namespace Bank.Controller
 
             return result;
         }
-        
-        //public void DepositMoney(int bankomatNum, AccountType accountType, double amount)
-        
-       // public double GetBalanceByCardNum
+
+        public void TransitMoney(int BankomatNum, AccountType accountType, double amount)
+        {
+            var accs = GetAccountsByCardNum(Bank.Bankomats[BankomatNum].CurrentCard.Number);
+            var source_acc = accs.First(x => x.Type == accountType);
+            var destination_acc = accs.First(x => x.Type != accountType);
+            if (source_acc.Balance >= amount)
+            {
+                source_acc.Balance -= amount;
+                destination_acc.Balance += amount;
+                Form.WaitComand(BankomatNum);
+            }
+            else
+            {
+                Form.ErrorMessage(ErrorType.NotEnoughAccountMoney);
+            }
+        }
 
     }
 }

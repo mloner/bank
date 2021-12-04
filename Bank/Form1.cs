@@ -213,5 +213,24 @@ namespace Bank
             var amount = textBox.Text == "" ? 0 : double.Parse(textBox.Text);
             BankController.WithdrawMoney(bankomatNum, accountType, amount);
         }
+
+        private void btnMainTosaving_0_Click(object sender, EventArgs e)
+        {
+            AccountType accountType = AccountType.Main;
+            int bankomatNum = 0;
+            var tbAmount = Controls.Find($"tbMainAmount_{bankomatNum}", true).First() as TextBox;
+            var amount = tbAmount.Text == "" ? 0 : double.Parse(tbAmount.Text);
+            BankController.TransitMoney(bankomatNum, accountType, amount);
+        }
+
+
+        private void btnSavingTomain_0_Click(object sender, EventArgs e)
+        {
+            AccountType accountType = AccountType.Saving;
+            int bankomatNum = 0;
+            var tbAmount = Controls.Find($"tbSavingAmount_{bankomatNum}", true).First() as TextBox;
+            var amount = tbAmount.Text == "" ? 0 : double.Parse(tbAmount.Text);
+            BankController.TransitMoney(bankomatNum, accountType, amount);
+        }
     }
 }

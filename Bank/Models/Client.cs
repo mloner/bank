@@ -14,7 +14,7 @@ namespace Bank.Models
 
         public Client()
         {
-            DayLimit = 5000;
+            DayLimit = 25000;
         }
     }
 }
